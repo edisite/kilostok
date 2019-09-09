@@ -1,5 +1,5 @@
     <!-- fixed-top-->
-    <nav class="header-navbar navbar-expand-md navbar navbar-with-menu fixed-top navbar-light navbar-border navbar-brand-center">
+<!--    <nav class="header-navbar navbar-expand-md navbar navbar-with-menu fixed-top navbar-light navbar-border navbar-brand-center">
       <div class="navbar-wrapper">
         <div class="navbar-header">
           <ul class="nav navbar-nav flex-row">
@@ -18,7 +18,7 @@
           </div>
         </div>
       </div>
-    </nav>
+    </nav>-->
 <!-- ////////////////////////////////////////////////////////////////////////////-->
     <div class="app-content content">
       <div class="content-wrapper">
@@ -33,11 +33,12 @@
                             <div class="card-title text-center">
                                 <div class="p-1"><img src="<?php echo base_url(); ?>app-assets/images/logo/kilostok.png" alt="branding logo"></div>
                             </div>
-                            <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2"><span>login page administrator</span></h6>
+                            <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2"><span>Login sebagai Mitra</span></h6>
                         </div>
                         <div class="card-content">
                             <div class="card-body pt-0">
                                 <?php echo $form->open(); ?>
+                                <?php echo $form->messages(); ?>
                                 <form class="form-horizontal" action="index.html">
                                     <fieldset class="form-group floating-label-form-group">
 
@@ -53,7 +54,7 @@
                                                 <label for="remember-me"> Remember Me</label>
                                             </fieldset>
                                         </div>
-                                        <div class="col-md-6 col-12 float-sm-left text-center text-sm-right"><a href="recover-password.html" class="card-link">Forgot Password?</a></div>
+                                       
                                     </div>
                                     <button type="submit" class="btn btn-outline-info btn-block"><i class="ft-unlock"></i> Login</button>
                                 </form>
@@ -67,8 +68,8 @@
 
         </div>
         <div class="card-body pb-0">
-            <p class="text-center"><a href="recover-password.html" class="card-link">Recover password</a></p>
-            <p class="text-center">New to Robust Admin? <a href="register-with-navbar.html" class="card-link">Create Account</a></p>
+            <p class="text-center"><a href="recover-password.html" class="card-link">Lupa password?</a></p>
+            <p class="text-center">Belum pernah terdaftar sebelumnya? <a href="register-with-navbar.html" class="card-link">Daftarkan diri Anda</a></p>
         </div>
       </div>
     </div>

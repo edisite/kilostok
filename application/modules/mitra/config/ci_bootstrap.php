@@ -85,38 +85,8 @@ $config['ci_bootstrap'] = array(
 			'url'		=> 'home',
 			'icon'		=> 'icon-home',
 		),
-		'masterdata' => array(
-			'name'		=> 'Master Data',
-			'url'		=> 'masterdata',
-			'icon'		=> 'fa fa-medium',
-			'children'  => array(
-				'Bidang'			=> '',
-				'Kategori Produk'			=> '',
-				'Periode'			=> '',
-				'Gudang'			=> '',
-				'Bidang'			=> '',
-			)
-		),
-		'mitra' => array(
-			'name'		=> 'Mitra',
-			'url'		=> 'mitra',
-			'icon'		=> 'fa fa-address-card',
-			'children'  => array(
-				'List Mitra'			=> '',
-				'Create Mitra'		=> '    ',
-			)
-		),
-		'funder' => array(
-			'name'		=> 'Funder',
-			'url'		=> 'funder',
-			'icon'		=> 'fa fa-address-card-o',
-			'children'  => array(
-				'List Funder'       => '',
-				'Create Funder'		=> '',
-			)
-		),
 		'panel' => array(
-			'name'		=> 'Admin Panel',
+			'name'		=> 'Akun',
 			'url'		=> 'panel',
 			'icon'		=> 'fa fa-users',
 			'children'  => array(

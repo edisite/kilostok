@@ -8,7 +8,7 @@
             <li class="nav-item">
                 <a class="navbar-brand" href="">
                     <img class="brand-logo" alt="kilostok logo" src="<?php echo base_url(); ?>app-assets/images/logo/kilostok.jpg">
-                    <h3 class="brand-text">Admin</h3>
+                    <h3 class="brand-text">Mitra</h3>
                 </a>
             </li>
             <li class="nav-item d-md-none"><a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="fa fa-ellipsis-v"></i></a></li>
