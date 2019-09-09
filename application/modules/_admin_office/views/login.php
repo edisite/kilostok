@@ -15,7 +15,8 @@
                         </div>
                         <div class="card-content">
                             <div class="card-body pt-0">
-                                <?php echo $form->open(); ?>
+                                <?php echo $form->open(); ?>                                
+                                <?php echo $form->messages(); ?>                                
                                 <form class="form-horizontal" action="index.html">
                                     <fieldset class="form-group floating-label-form-group">
 
