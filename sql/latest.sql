@@ -1,6 +1,17 @@
-#
-# TABLE STRUCTURE FOR: admin_groups
-#
+/*
+SQLyog Enterprise - MySQL GUI v8.05 
+MySQL - 5.5.5-10.1.35-MariaDB : Database - kstok
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+/*Table structure for table `admin_groups` */
 
 DROP TABLE IF EXISTS `admin_groups`;
 
@@ -11,15 +22,7 @@ CREATE TABLE `admin_groups` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
-INSERT INTO `admin_groups` (`id`, `name`, `description`) VALUES ('1', 'webmaster', 'Webmaster');
-INSERT INTO `admin_groups` (`id`, `name`, `description`) VALUES ('2', 'admin', 'Administrator');
-INSERT INTO `admin_groups` (`id`, `name`, `description`) VALUES ('3', 'manager', 'Manager');
-INSERT INTO `admin_groups` (`id`, `name`, `description`) VALUES ('4', 'staff', 'Staff');
-
-
-#
-# TABLE STRUCTURE FOR: admin_login_attempts
-#
+/*Table structure for table `admin_login_attempts` */
 
 DROP TABLE IF EXISTS `admin_login_attempts`;
 
@@ -31,9 +34,7 @@ CREATE TABLE `admin_login_attempts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#
-# TABLE STRUCTURE FOR: admin_users
-#
+/*Table structure for table `admin_users` */
 
 DROP TABLE IF EXISTS `admin_users`;
 
@@ -56,15 +57,7 @@ CREATE TABLE `admin_users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
-INSERT INTO `admin_users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`) VALUES ('1', '127.0.0.1', 'webmaster', '$2y$08$/X5gzWjesYi78GqeAv5tA.dVGBVP7C1e1PzqnYCVe5s1qhlDIPPES', NULL, NULL, NULL, NULL, NULL, NULL, '1451900190', '1465489592', '1', 'Webmaster', '');
-INSERT INTO `admin_users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`) VALUES ('2', '127.0.0.1', 'admin', '$2y$08$7Bkco6JXtC3Hu6g9ngLZDuHsFLvT7cyAxiz1FzxlX5vwccvRT7nKW', NULL, NULL, NULL, NULL, NULL, NULL, '1451900228', '1465489580', '1', 'Admin', '');
-INSERT INTO `admin_users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`) VALUES ('3', '127.0.0.1', 'manager', '$2y$08$snzIJdFXvg/rSHe0SndIAuvZyjktkjUxBXkrrGdkPy1K6r5r/dMLa', NULL, NULL, NULL, NULL, NULL, NULL, '1451900430', '1465489585', '1', 'Manager', '');
-INSERT INTO `admin_users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`) VALUES ('4', '127.0.0.1', 'staff', '$2y$08$NigAXjN23CRKllqe3KmjYuWXD5iSRPY812SijlhGeKfkrMKde9da6', NULL, NULL, NULL, NULL, NULL, NULL, '1451900439', '1465489590', '1', 'Staff', '');
-
-
-#
-# TABLE STRUCTURE FOR: admin_users_groups
-#
+/*Table structure for table `admin_users_groups` */
 
 DROP TABLE IF EXISTS `admin_users_groups`;
 
@@ -75,15 +68,7 @@ CREATE TABLE `admin_users_groups` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
-INSERT INTO `admin_users_groups` (`id`, `user_id`, `group_id`) VALUES ('1', '1', '1');
-INSERT INTO `admin_users_groups` (`id`, `user_id`, `group_id`) VALUES ('2', '2', '2');
-INSERT INTO `admin_users_groups` (`id`, `user_id`, `group_id`) VALUES ('3', '3', '3');
-INSERT INTO `admin_users_groups` (`id`, `user_id`, `group_id`) VALUES ('4', '4', '4');
-
-
-#
-# TABLE STRUCTURE FOR: api_access
-#
+/*Table structure for table `api_access` */
 
 DROP TABLE IF EXISTS `api_access`;
 
@@ -96,9 +81,7 @@ CREATE TABLE `api_access` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#
-# TABLE STRUCTURE FOR: api_keys
-#
+/*Table structure for table `api_keys` */
 
 DROP TABLE IF EXISTS `api_keys`;
 
@@ -114,12 +97,7 @@ CREATE TABLE `api_keys` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-INSERT INTO `api_keys` (`id`, `user_id`, `key`, `level`, `ignore_limits`, `is_private_key`, `ip_addresses`, `date_created`) VALUES ('1', '0', 'anonymous', '1', '1', '0', NULL, '1463388382');
-
-
-#
-# TABLE STRUCTURE FOR: api_limits
-#
+/*Table structure for table `api_limits` */
 
 DROP TABLE IF EXISTS `api_limits`;
 
@@ -132,9 +110,7 @@ CREATE TABLE `api_limits` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#
-# TABLE STRUCTURE FOR: api_logs
-#
+/*Table structure for table `api_logs` */
 
 DROP TABLE IF EXISTS `api_logs`;
 
@@ -152,29 +128,22 @@ CREATE TABLE `api_logs` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#
-# TABLE STRUCTURE FOR: groups
-#
+/*Table structure for table `funder_groups` */
 
-DROP TABLE IF EXISTS `groups`;
+DROP TABLE IF EXISTS `funder_groups`;
 
-CREATE TABLE `groups` (
+CREATE TABLE `funder_groups` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
   `description` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `groups` (`id`, `name`, `description`) VALUES ('1', 'members', 'General User');
+/*Table structure for table `funder_login_attempts` */
 
+DROP TABLE IF EXISTS `funder_login_attempts`;
 
-#
-# TABLE STRUCTURE FOR: login_attempts
-#
-
-DROP TABLE IF EXISTS `login_attempts`;
-
-CREATE TABLE `login_attempts` (
+CREATE TABLE `funder_login_attempts` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `ip_address` varchar(15) NOT NULL,
   `login` varchar(100) NOT NULL,
@@ -182,19 +151,17 @@ CREATE TABLE `login_attempts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#
-# TABLE STRUCTURE FOR: users
-#
+/*Table structure for table `funder_users` */
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `funder_users`;
 
-CREATE TABLE `users` (
+CREATE TABLE `funder_users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `ip_address` varchar(15) NOT NULL,
   `username` varchar(100) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `salt` varchar(255) DEFAULT NULL,
-  `email` varchar(100) NOT NULL,
+  `email` varchar(100) DEFAULT NULL,
   `activation_code` varchar(40) DEFAULT NULL,
   `forgotten_password_code` varchar(40) DEFAULT NULL,
   `forgotten_password_time` int(11) unsigned DEFAULT NULL,
@@ -204,27 +171,193 @@ CREATE TABLE `users` (
   `active` tinyint(1) unsigned DEFAULT NULL,
   `first_name` varchar(50) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL,
-  `company` varchar(100) DEFAULT NULL,
-  `phone` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
-INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES ('1', '127.0.0.1', 'member', '$2y$08$kkqUE2hrqAJtg.pPnAhvL.1iE7LIujK5LZ61arONLpaBBWh/ek61G', NULL, 'member@member.com', NULL, NULL, NULL, NULL, '1451903855', '1451905011', '1', 'Member', 'One', NULL, NULL);
+/*Table structure for table `funder_users_groups` */
 
+DROP TABLE IF EXISTS `funder_users_groups`;
 
-#
-# TABLE STRUCTURE FOR: users_groups
-#
-
-DROP TABLE IF EXISTS `users_groups`;
-
-CREATE TABLE `users_groups` (
+CREATE TABLE `funder_users_groups` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) unsigned NOT NULL,
   `group_id` mediumint(8) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
-INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES ('1', '1', '1');
+/*Table structure for table `m_bidang` */
 
+DROP TABLE IF EXISTS `m_bidang`;
 
+CREATE TABLE `m_bidang` (
+  `bidang_id` int(11) NOT NULL AUTO_INCREMENT,
+  `bidang_nama` varchar(255) DEFAULT NULL,
+  `bidang_status_aktif` char(1) DEFAULT NULL,
+  `bidang_create_date` datetime DEFAULT NULL,
+  `bidang_create_by` varchar(255) DEFAULT NULL,
+  `bidang_update_date` datetime DEFAULT NULL,
+  `bidang_update_by` varchar(255) DEFAULT NULL,
+  `bidang_revised` int(11) DEFAULT NULL,
+  PRIMARY KEY (`bidang_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Table structure for table `m_gudang` */
+
+DROP TABLE IF EXISTS `m_gudang`;
+
+CREATE TABLE `m_gudang` (
+  `gudang_id` int(255) NOT NULL AUTO_INCREMENT,
+  `gudang_nama` varchar(255) NOT NULL,
+  `gudang_alamat` varchar(255) NOT NULL,
+  `gudang_kota` varchar(255) NOT NULL,
+  `gudang_telepon` varchar(255) NOT NULL,
+  `gudang_fax` varchar(255) DEFAULT NULL,
+  `gudang_email` varchar(255) DEFAULT NULL,
+  `m_cabang_id` int(11) NOT NULL,
+  `m_jenis_gudang_id` int(11) NOT NULL,
+  `gudang_status_aktif` char(1) NOT NULL,
+  `gudang_create_date` datetime NOT NULL,
+  `gudang_create_by` varchar(255) NOT NULL,
+  `gudang_update_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `gudang_update_by` varchar(255) DEFAULT NULL,
+  `gudang_revised` int(11) DEFAULT NULL,
+  PRIMARY KEY (`gudang_id`),
+  KEY `gudang_cabang` (`m_cabang_id`),
+  KEY `gudang_jenis_gudang` (`m_jenis_gudang_id`),
+  CONSTRAINT `gudang_cabang` FOREIGN KEY (`m_cabang_id`) REFERENCES `m_cabang` (`cabang_id`),
+  CONSTRAINT `gudang_jenis_gudang` FOREIGN KEY (`m_jenis_gudang_id`) REFERENCES `m_jenis_gudang` (`jenis_gudang_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Table structure for table `m_periode` */
+
+DROP TABLE IF EXISTS `m_periode`;
+
+CREATE TABLE `m_periode` (
+  `periode_id` int(11) NOT NULL AUTO_INCREMENT,
+  `periode_nama` varchar(255) DEFAULT NULL,
+  `periode_status_aktif` char(1) DEFAULT NULL,
+  `periode_create_date` datetime DEFAULT NULL,
+  `periode_create_by` varchar(255) DEFAULT NULL,
+  `periode_update_date` datetime DEFAULT NULL,
+  `periode_update_by` varchar(255) DEFAULT NULL,
+  `periode_revised` int(11) DEFAULT NULL,
+  PRIMARY KEY (`periode_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Table structure for table `m_produk` */
+
+DROP TABLE IF EXISTS `m_produk`;
+
+CREATE TABLE `m_produk` (
+  `produk_id` int(11) NOT NULL AUTO_INCREMENT,
+  `m_jenis_barang_id` int(11) NOT NULL,
+  `produk_kode` varchar(255) NOT NULL,
+  `produk_nomor` varchar(255) DEFAULT NULL,
+  `produk_nama` varchar(255) NOT NULL,
+  `m_satuan_id` int(11) DEFAULT NULL,
+  `produk_minimum_stok` int(11) NOT NULL DEFAULT '0',
+  `produk_status_aktif` char(1) NOT NULL,
+  `produk_create_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `produk_create_by` varchar(255) NOT NULL,
+  `produk_update_date` datetime DEFAULT NULL,
+  `produk_update_by` varchar(255) DEFAULT NULL,
+  `produk_revised` int(11) DEFAULT NULL,
+  PRIMARY KEY (`produk_id`),
+  KEY `jenis_barang` (`m_jenis_barang_id`),
+  CONSTRAINT `jenis_barang` FOREIGN KEY (`m_jenis_barang_id`) REFERENCES `m_produk_kategori` (`kategori_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+/*Table structure for table `m_produk_kategori` */
+
+DROP TABLE IF EXISTS `m_produk_kategori`;
+
+CREATE TABLE `m_produk_kategori` (
+  `kategori_id` int(11) NOT NULL AUTO_INCREMENT,
+  `kategori_nama` varchar(255) DEFAULT NULL,
+  `m_kategori_gudang_id` int(11) DEFAULT NULL,
+  `kategori_status_aktif` char(1) DEFAULT NULL,
+  `kategori_create_date` datetime DEFAULT NULL,
+  `kategori_create_by` varchar(255) DEFAULT NULL,
+  `kategori_update_date` datetime DEFAULT NULL,
+  `kategori_update_by` varchar(255) DEFAULT NULL,
+  `kategori_revised` int(11) DEFAULT NULL,
+  PRIMARY KEY (`kategori_id`),
+  KEY `jenis_gudang` (`m_kategori_gudang_id`),
+  CONSTRAINT `jenis_gudang` FOREIGN KEY (`m_kategori_gudang_id`) REFERENCES `m_jenis_gudang` (`jenis_gudang_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Table structure for table `m_satuan` */
+
+DROP TABLE IF EXISTS `m_satuan`;
+
+CREATE TABLE `m_satuan` (
+  `satuan_id` int(11) NOT NULL AUTO_INCREMENT,
+  `satuan_nama` varchar(255) DEFAULT NULL,
+  `satuan_status_aktif` char(1) DEFAULT NULL,
+  `satuan_create_date` datetime DEFAULT NULL,
+  `satuan_create_by` varchar(255) DEFAULT NULL,
+  `satuan_update_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `satuan_update_by` varchar(255) DEFAULT NULL,
+  `satuan_revised` int(11) DEFAULT NULL,
+  PRIMARY KEY (`satuan_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Table structure for table `mitra_groups` */
+
+DROP TABLE IF EXISTS `mitra_groups`;
+
+CREATE TABLE `mitra_groups` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `description` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Table structure for table `mitra_login_attempts` */
+
+DROP TABLE IF EXISTS `mitra_login_attempts`;
+
+CREATE TABLE `mitra_login_attempts` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `ip_address` varchar(15) NOT NULL,
+  `login` varchar(100) NOT NULL,
+  `time` int(11) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Table structure for table `mitra_users` */
+
+DROP TABLE IF EXISTS `mitra_users`;
+
+CREATE TABLE `mitra_users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `ip_address` varchar(15) NOT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `salt` varchar(255) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `activation_code` varchar(40) DEFAULT NULL,
+  `forgotten_password_code` varchar(40) DEFAULT NULL,
+  `forgotten_password_time` int(11) unsigned DEFAULT NULL,
+  `remember_code` varchar(40) DEFAULT NULL,
+  `created_on` int(11) unsigned NOT NULL,
+  `last_login` int(11) unsigned DEFAULT NULL,
+  `active` tinyint(1) unsigned DEFAULT NULL,
+  `first_name` varchar(50) DEFAULT NULL,
+  `last_name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+/*Table structure for table `mitra_users_groups` */
+
+DROP TABLE IF EXISTS `mitra_users_groups`;
+
+CREATE TABLE `mitra_users_groups` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned NOT NULL,
+  `group_id` mediumint(8) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
