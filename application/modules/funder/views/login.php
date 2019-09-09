@@ -11,7 +11,7 @@
                             <div class="card-title text-center">
                                 <div class="p-1"><img src="<?php echo base_url(); ?>app-assets/images/logo/kilostok.png" alt="branding logo"></div>
                             </div>
-                            <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2"><span>login page administrator</span></h6>
+                            <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2"><span>login sebagai Investor</span></h6>
                         </div>
                         <div class="card-content">
                             <div class="card-body pt-0">
@@ -33,7 +33,7 @@
                                         </div>
                                         <div class="col-md-6 col-12 float-sm-left text-center text-sm-right"><a href="recover-password.html" class="card-link">Forgot Password?</a></div>
                                     </div>
-                                    <button type="submit" class="btn btn-outline-info btn-block"><i class="ft-unlock"></i> Login</button>
+                                    <button type="submit" class="btn btn-blue-grey btn-block"><i class="ft-unlock"></i> Login</button>
                                 </form>
                             </div>
                             <?php echo $form->close(); ?>
