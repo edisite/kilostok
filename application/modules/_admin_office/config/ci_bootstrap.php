@@ -162,7 +162,7 @@ $config['ci_bootstrap'] = array(
 	// AdminLTE settings
 	'adminlte' => array(
 		'body_class' => array(
-			'webmaster'	=> 'navbar-light',
+			'webmaster'	=> 'navbar-dark',
 			'admin'		=> '',
 			'manager'	=> '',
 			'staff'		=> '',
