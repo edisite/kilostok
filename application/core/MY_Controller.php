@@ -115,7 +115,7 @@ class MY_Controller extends MX_Controller {
 		// push first entry to breadcrumb
 		if ($this->mCtrler!='home')
 		{
-			$page = $this->mMultilingual ? lang('home') : 'Home';
+			$page = $this->mMultilingual ? lang('home') : 'Dashboard';
 			$this->push_breadcrumb($page, '');
 		}
 

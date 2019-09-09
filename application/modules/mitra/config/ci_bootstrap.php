@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $config['ci_bootstrap'] = array(
 
 	// Site name
-	'site_name' => 'Admin Panel',
+	'site_name' => 'Mitra Panel',
 
 	// Default page title prefix
 	'page_title_prefix' => '',
@@ -33,25 +33,46 @@ $config['ci_bootstrap'] = array(
 	// Default scripts to embed at page head or end
 	'scripts' => array(
 		'head'	=> array(
-			'assets/dist/admin/adminlte.min.js',
-			'assets/dist/admin/lib.min.js',
-			'assets/dist/admin/app.min.js'
+
 		),
 		'foot'	=> array(
+                        'app-assets/vendors/js/vendors.min.js',
+			'app-assets/vendors/js/ui/jquery.sticky.js',
+			'app-assets/vendors/js/charts/jquery.sparkline.min.js',
+			'app-assets/vendors/js/forms/icheck/icheck.min.js',
+			'app-assets/vendors/js/forms/icheck/icheck.min.js',
+			'app-assets/vendors/js/extensions/jquery.knob.min.js',
+			'app-assets/vendors/js/charts/raphael-min.js',
+			'app-assets/vendors/js/charts/morris.min.js',
+			'app-assets/vendors/js/extensions/unslider-min.js',
+			'app-assets/vendors/js/charts/echarts/echarts.js',
+			'app-assets/js/core/app-menu.js',
+			'app-assets/js/core/app.js',
+			'app-assets/js/scripts/ui/breadcrumbs-with-stats.js',
+			'app-assets/js/scripts/pages/dashboard-fitness.js',
 		),
 	),
 
 	// Default stylesheets to embed at page head
 	'stylesheets' => array(
 		'screen' => array(
-			'assets/dist/admin/adminlte.min.css',
-			'assets/dist/admin/lib.min.css',
-			'assets/dist/admin/app.min.css'
+                        'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CMuli:300,400,500,700',
+			'app-assets/css/vendors.css',
+			'app-assets/vendors/css/forms/icheck/icheck.css',
+			'app-assets/vendors/css/forms/icheck/custom.css',
+			'app-assets/vendors/css/charts/morris.css',
+			'app-assets/vendors/css/extensions/unslider.css',
+			'app-assets/vendors/css/weather-icons/climacons.min.css',
+			'app-assets/css/app.css',
+			'app-assets/css/core/menu/menu-types/horizontal-top-icon-menu.css',
+			'app-assets/css/core/colors/palette-climacon.css',
+			'app-assets/css/pages/users.css',
+			'assets/css/style.css'
 		)
 	),
 
 	// Default CSS class for <body> tag
-	'body_class' => '',
+	'body_class' => 'navbar-light',
 	
 	// Multilingual settings
 	'languages' => array(
@@ -61,23 +82,43 @@ $config['ci_bootstrap'] = array(
 	'menu' => array(
 		'home' => array(
 			'name'		=> 'Home',
-			'url'		=> '',
-			'icon'		=> 'fa fa-home',
+			'url'		=> 'home',
+			'icon'		=> 'icon-home',
 		),
-		'user' => array(
-			'name'		=> 'Users',
-			'url'		=> 'user',
-			'icon'		=> 'fa fa-users',
+		'masterdata' => array(
+			'name'		=> 'Master Data',
+			'url'		=> 'masterdata',
+			'icon'		=> 'fa fa-medium',
 			'children'  => array(
-				'List'			=> 'user',
-				'Create'		=> 'user/create',
-				'User Groups'	=> 'user/group',
+				'Bidang'			=> '',
+				'Kategori Produk'			=> '',
+				'Periode'			=> '',
+				'Gudang'			=> '',
+				'Bidang'			=> '',
+			)
+		),
+		'mitra' => array(
+			'name'		=> 'Mitra',
+			'url'		=> 'mitra',
+			'icon'		=> 'fa fa-address-card',
+			'children'  => array(
+				'List Mitra'			=> '',
+				'Create Mitra'		=> '    ',
+			)
+		),
+		'funder' => array(
+			'name'		=> 'Funder',
+			'url'		=> 'funder',
+			'icon'		=> 'fa fa-address-card-o',
+			'children'  => array(
+				'List Funder'       => '',
+				'Create Funder'		=> '',
 			)
 		),
 		'panel' => array(
 			'name'		=> 'Admin Panel',
 			'url'		=> 'panel',
-			'icon'		=> 'fa fa-cog',
+			'icon'		=> 'fa fa-users',
 			'children'  => array(
 				'Admin Users'			=> 'panel/admin_user',
 				'Create Admin User'		=> 'panel/admin_user_create',
@@ -92,11 +133,6 @@ $config['ci_bootstrap'] = array(
 				'Database Versions'		=> 'util/list_db',
 			)
 		),
-		'logout' => array(
-			'name'		=> 'Sign Out',
-			'url'		=> 'panel/logout',
-			'icon'		=> 'fa fa-sign-out',
-		)
 	),
 
 	// Login page
@@ -108,8 +144,8 @@ $config['ci_bootstrap'] = array(
 		'user/group'				=> array('webmaster', 'admin', 'manager'),
 		'panel'						=> array('webmaster'),
 		'panel/admin_user'			=> array('webmaster'),
-		'panel/admin_user_create'	=> array('webmaster'),
-		'panel/admin_user_group'	=> array('webmaster'),
+		'panel/admin_user_create'               => array('webmaster'),
+		'panel/admin_user_group'                => array('webmaster'),
 		'util'						=> array('webmaster'),
 		'util/list_db'				=> array('webmaster'),
 		'util/backup_db'			=> array('webmaster'),
@@ -120,10 +156,10 @@ $config['ci_bootstrap'] = array(
 	// AdminLTE settings
 	'adminlte' => array(
 		'body_class' => array(
-			'webmaster'	=> 'skin-red',
-			'admin'		=> 'skin-purple',
-			'manager'	=> 'skin-black',
-			'staff'		=> 'skin-blue',
+			'webmaster'	=> 'navbar-light',
+			'admin'		=> '',
+			'manager'	=> '',
+			'staff'		=> '',
 		)
 	),
 
@@ -146,7 +182,7 @@ $config['ci_bootstrap'] = array(
 		array(
 			'auth'		=> array('webmaster', 'admin', 'manager', 'staff'),
 			'name'		=> 'Github Repo',
-			'url'		=> CI_BOOTSTRAP_REPO,
+			'url'		=> '',
 			'target'	=> '_blank',
 			'color'		=> 'text-green'
 		),
@@ -164,4 +200,4 @@ $config['ci_bootstrap'] = array(
 | Override values from /application/config/config.php
 | -------------------------------------------------------------------------
 */
-$config['sess_cookie_name'] = 'ci_session_admin';
+$config['sess_cookie_name'] = 'kilostok_session_mitra';

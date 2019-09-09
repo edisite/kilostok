@@ -37,4 +37,5 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
-<body class="<?php echo $body_class; ?>">
+<!--<body class="<?php //echo $body_class; ?>"  data-open="hover" data-menu="horizontal-menu" data-col="2-columns">-->
+<body class="horizontal-layout horizontal-top-icon-menu 2-columns  menu-expanded"  data-open="hover" data-menu="horizontal-menu" data-col="2-columns">

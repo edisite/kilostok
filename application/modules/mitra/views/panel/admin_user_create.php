@@ -1,13 +1,14 @@
 <?php echo $form->messages(); ?>
-
-<div class="row">
+<section id="basic-form-layouts">
+	<div class="row match-height">
 
 	<div class="col-md-6">
-		<div class="box box-primary">
-			<div class="box-header">
-				<h3 class="box-title">User Info</h3>
+		<div class="card">
+			<div class="card-header">
+				<h3 class="box-title"><i class="ft-user"></i>Create Account</h3>
 			</div>
-			<div class="box-body">
+                        <div class="card-content collapse show">
+			<div class="card-body">
 				<?php echo $form->open(); ?>
 
 					<?php echo $form->bs3_text('Username', 'username'); ?>
@@ -33,7 +34,9 @@
 					
 				<?php echo $form->close(); ?>
 			</div>
+                        </div>
 		</div>
 	</div>
 	
 </div>
+</section>

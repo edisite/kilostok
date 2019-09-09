@@ -40,6 +40,7 @@ class Panel extends Admin_Controller {
 		$crud->unset_delete();
 
 		$this->mPageTitle = 'Admin Users';
+                $this->mBreadcrumb = '';
 		$this->render_crud();
 	}
 
@@ -93,6 +94,7 @@ class Panel extends Admin_Controller {
 	public function admin_user_group()
 	{
 		$crud = $this->generate_crud('admin_groups');
+                $crud->set_theme('datatables');
 		$this->mPageTitle = 'Admin User Groups';
 		$this->render_crud();
 	}
