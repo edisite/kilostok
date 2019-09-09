@@ -97,24 +97,6 @@ $config['ci_bootstrap'] = array(
 				'Bidang'			=> '',
 			)
 		),
-		'mitra' => array(
-			'name'		=> 'Mitra',
-			'url'		=> 'mitra',
-			'icon'		=> 'fa fa-address-card',
-			'children'  => array(
-				'List Mitra'			=> '',
-				'Create Mitra'		=> '    ',
-			)
-		),
-		'funder' => array(
-			'name'		=> 'Funder',
-			'url'		=> 'funder',
-			'icon'		=> 'fa fa-address-card-o',
-			'children'  => array(
-				'List Funder'       => '',
-				'Create Funder'		=> '',
-			)
-		),
 		'panel' => array(
 			'name'		=> 'Admin Panel',
 			'url'		=> 'panel',
@@ -156,7 +138,7 @@ $config['ci_bootstrap'] = array(
 	// AdminLTE settings
 	'adminlte' => array(
 		'body_class' => array(
-			'webmaster'	=> 'navbar-light',
+			'webmaster'	=> 'navbar-dark bg-blue-grey bg-lighten-1',
 			'admin'		=> '',
 			'manager'	=> '',
 			'staff'		=> '',
@@ -200,4 +182,4 @@ $config['ci_bootstrap'] = array(
 | Override values from /application/config/config.php
 | -------------------------------------------------------------------------
 */
-$config['sess_cookie_name'] = 'kilostok_session_admin_office';
+$config['sess_cookie_name'] = 'kilostok_session_funder';

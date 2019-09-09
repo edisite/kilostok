@@ -5,7 +5,6 @@ class Home extends Admin_Controller {
 
 	public function index()
 	{		
-            var_dump($_SESSION);
             $this->render('home');
 	}
 }
