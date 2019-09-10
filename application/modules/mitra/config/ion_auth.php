@@ -23,10 +23,10 @@
 | -------------------------------------------------------------------------
 | Database table names.
 */
-$config['tables']['users']           = 'admin_users';
-$config['tables']['groups']          = 'admin_groups';
-$config['tables']['users_groups']    = 'admin_users_groups';
-$config['tables']['login_attempts']  = 'admin_login_attempts';
+$config['tables']['users']           = 'mitra_users';
+$config['tables']['groups']          = 'mitra_groups';
+$config['tables']['users_groups']    = 'mitra_users_groups';
+$config['tables']['login_attempts']  = 'mitra_login_attempts';
 
 /*
  | Users table column and Group table column you want to join WITH.

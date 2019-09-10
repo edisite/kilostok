@@ -133,30 +133,6 @@ $config['ci_bootstrap'] = array(
 		)
 	),
 
-	// Useful links to display at bottom of sidemenu
-	'useful_links' => array(
-		array(
-			'auth'		=> array('webmaster', 'admin', 'manager', 'staff'),
-			'name'		=> 'Frontend Website',
-			'url'		=> '',
-			'target'	=> '_blank',
-			'color'		=> 'text-aqua'
-		),
-		array(
-			'auth'		=> array('webmaster', 'admin'),
-			'name'		=> 'API Site',
-			'url'		=> 'api',
-			'target'	=> '_blank',
-			'color'		=> 'text-orange'
-		),
-		array(
-			'auth'		=> array('webmaster', 'admin', 'manager', 'staff'),
-			'name'		=> 'Github Repo',
-			'url'		=> '',
-			'target'	=> '_blank',
-			'color'		=> 'text-green'
-		),
-	),
 
 	// Debug tools
 	'debug' => array(
