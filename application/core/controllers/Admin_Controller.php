@@ -20,7 +20,7 @@ class Admin_Controller extends MY_Controller {
 		$this->verify_login();
 
 		// store site config values
-		$this->mUsefulLinks = $this->mConfig['useful_links'];
+//		$this->mUsefulLinks = $this->mConfig['useful_links'];
 	}
 
 	// Render template (override parent)
@@ -31,7 +31,7 @@ class Admin_Controller extends MY_Controller {
 		$this->mBodyClass = $config['body_class'][$this->mUserMainGroup];
 
 		// additional view data
-		$this->mViewData['useful_links'] = $this->mUsefulLinks;
+//		$this->mViewData['useful_links'] = $this->mUsefulLinks;
 
 		parent::render($view_file, $layout);
 	}
