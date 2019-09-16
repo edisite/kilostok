@@ -875,7 +875,7 @@ class Ion_auth_model extends CI_Model
 	 * @return bool
 	 * @author Mathew
 	 **/
-	public function register($identity, $password, $email, $additional_data = array(), $groups = array())
+	public function register($identity, $password, $email, $additional_data = array(), $groups = array(), $statusmitra = 'false', $nama_perusahaan = '')
 	{
 		$this->trigger_events('pre_register');
 
@@ -931,11 +931,22 @@ class Ion_auth_model extends CI_Model
 		$this->trigger_events('extra_set');
 
 		$this->db->insert($this->tables['users'], $user_data);
-
+                
 		$id = $this->db->insert_id();
 
 		// add in groups array if it doesn't exists and stop adding into default group if default group ids are set
-		if( isset($default_group->id) && empty($groups) )
+		
+                if($statusmitra == true){
+                    $this->db->set('mitra_nama',$nama_perusahaan);
+                    $this->db->set('mitra_email_bisnis',$email);
+                    $this->db->set('mitra_aktivasi','belumberifikasi');
+                    $this->db->set('mitra_register_date',date('Y-m-d H:i:s'));
+                    $this->db->insert('mitra_akun');                
+                    $kode_mitra = $this->db->insert_id();
+                }else{
+                    $kode_mitra = 0;
+                }
+                if( isset($default_group->id) && empty($groups) )
 		{
 			$groups[] = $default_group->id;
 		}
@@ -945,7 +956,7 @@ class Ion_auth_model extends CI_Model
 			// add to groups
 			foreach ($groups as $group)
 			{
-				$this->add_to_group($group, $id);
+				$this->add_to_group($group, $id, $kode_mitra);
 			}
 		}
 
@@ -1462,9 +1473,9 @@ class Ion_auth_model extends CI_Model
 	 * @return bool
 	 * @author Ben Edmunds
 	 **/
-	public function add_to_group($group_ids, $user_id=false)
+	public function add_to_group($group_ids, $user_id=false, $kode_mitra=0)
 	{
-		$this->trigger_events('add_to_group');
+                $this->trigger_events('add_to_group');
 
 		// if no id was passed use the current users id
 		$user_id || $user_id = $this->session->userdata('user_id');
@@ -1479,7 +1490,11 @@ class Ion_auth_model extends CI_Model
 		// Then insert each into the database
 		foreach ($group_ids as $group_id)
 		{
-			if ($this->db->insert($this->tables['users_groups'], array( $this->join['groups'] => (float)$group_id, $this->join['users'] => (float)$user_id)))
+			$insertarraygroup  = array( $this->join['groups'] => (float)$group_id, $this->join['users'] => (float)$user_id);
+                        if($kode_mitra > 0 || count(isset($kode_mitra)) > 0){
+                            $insertarraygroup  = array_merge($insertarraygroup, array('mitra_id' => $kode_mitra));
+                        }
+                        if ($this->db->insert($this->tables['users_groups'],$insertarraygroup ))
 			{
 				if (isset($this->_cache_groups[$group_id])) {
 					$group_name = $this->_cache_groups[$group_id];

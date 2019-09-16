@@ -22,6 +22,37 @@ $config = array(
 		),
 	),
 
+	// Create Admin User
+	'register/index' => array(
+		array(
+			'field'		=> 'nama_perusahaan',
+			'label'		=> 'Nama Perusahaan',
+			'rules'		=> 'required',
+		),
+		array(
+			'field'		=> 'first_name',
+			'label'		=> 'Nama Depan',
+			'rules'		=> 'required',
+		),
+		array(
+			'field'		=> 'email',
+			'label'		=> 'Email',
+			'rules'		=> 'valid_email|is_unique[mitra_users.email]',
+		),
+		array(
+			'field'		=> 'password',
+			'label'		=> 'Password',
+			'rules'		=> 'required',
+		),
+		array(
+			'field'		=> 'retype_password',
+			'label'		=> 'Retype Password',
+			'rules'		=> 'required|matches[password]',
+		),
+	),
+
+	// Reset Admin User Password
+	
 	// Create User
 	'user/create' => array(
 		array(
@@ -70,37 +101,6 @@ $config = array(
 		),
 	),
 
-	// Create Admin User
-	'panel/admin_user_create' => array(
-		array(
-			'field'		=> 'username',
-			'label'		=> 'Username',
-			'rules'		=> 'required|is_unique[users.username]',
-		),
-		array(
-			'field'		=> 'first_name',
-			'label'		=> 'First Name',
-			'rules'		=> 'required',
-		),
-		/* Admin User can have no email
-		array(
-			'field'		=> 'email',
-			'label'		=> 'Email',
-			'rules'		=> 'valid_email|is_unique[users.email]',
-		),*/
-		array(
-			'field'		=> 'password',
-			'label'		=> 'Password',
-			'rules'		=> 'required',
-		),
-		array(
-			'field'		=> 'retype_password',
-			'label'		=> 'Retype Password',
-			'rules'		=> 'required|matches[password]',
-		),
-	),
-
-	// Reset Admin User Password
 	'panel/admin_user_reset_password' => array(
 		array(
 			'field'		=> 'new_password',

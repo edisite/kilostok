@@ -12,6 +12,16 @@ class Login extends MY_Controller {
 	{
 		$this->load->library('form_builder');
 		$form = $this->form_builder->create_form();
+                                                $files = array(
+                            'app-assets/js/scripts/forms/validation/form-validation.js',
+                            'app-assets/js/scripts/forms/form-login-register.js'
+                );
+                $screen = array(
+                            'app-assets/css/plugins/forms/validation/form-validation.css',
+                            'app-assets/css/pages/login-register.css'
+                );
+                $this->add_script($files);  
+                $this->add_stylesheet($screen);
 
 		if ($form->validate())
 		{
@@ -39,6 +49,7 @@ class Login extends MY_Controller {
 		// display form when no POST data, or validation failed
 		$this->mViewData['form'] = $form;
 		$this->mBodyClass = 'login-page';
+
 		$this->render('login', 'empty');
 	}
 }

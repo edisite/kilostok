@@ -40,16 +40,8 @@ $config['ci_bootstrap'] = array(
 			'app-assets/vendors/js/ui/jquery.sticky.js',
 			'app-assets/vendors/js/charts/jquery.sparkline.min.js',
 			'app-assets/vendors/js/forms/icheck/icheck.min.js',
-			'app-assets/vendors/js/forms/icheck/icheck.min.js',
-			'app-assets/vendors/js/extensions/jquery.knob.min.js',
-			'app-assets/vendors/js/charts/raphael-min.js',
-			'app-assets/vendors/js/charts/morris.min.js',
-			'app-assets/vendors/js/extensions/unslider-min.js',
-			'app-assets/vendors/js/charts/echarts/echarts.js',
 			'app-assets/js/core/app-menu.js',
-			'app-assets/js/core/app.js',
-			'app-assets/js/scripts/ui/breadcrumbs-with-stats.js',
-			'app-assets/js/scripts/pages/dashboard-fitness.js',
+			'app-assets/js/core/app.js'
 		),
 	),
 
@@ -60,13 +52,8 @@ $config['ci_bootstrap'] = array(
 			'app-assets/css/vendors.css',
 			'app-assets/vendors/css/forms/icheck/icheck.css',
 			'app-assets/vendors/css/forms/icheck/custom.css',
-			'app-assets/vendors/css/charts/morris.css',
-			'app-assets/vendors/css/extensions/unslider.css',
-			'app-assets/vendors/css/weather-icons/climacons.min.css',
 			'app-assets/css/app.css',
 			'app-assets/css/core/menu/menu-types/horizontal-top-icon-menu.css',
-			'app-assets/css/core/colors/palette-climacon.css',
-			'app-assets/css/pages/users.css',
 			'assets/css/style.css'
 		)
 	),
@@ -85,24 +72,78 @@ $config['ci_bootstrap'] = array(
 			'url'		=> 'home',
 			'icon'		=> 'icon-home',
 		),
-		'panel' => array(
-			'name'		=> 'Akun',
-			'url'		=> 'panel',
+		'makun' => array(
+			'name'		=> 'Akun Mitra',
+			'url'		=> 'akun',
 			'icon'		=> 'fa fa-users',
+		),
+                'mpembelian' => array(
+			'name'		=> 'Pembelian',
+			'url'		=> '',
+			'icon'		=> 'fa fa-medium',
 			'children'  => array(
-				'Admin Users'			=> 'panel/admin_user',
-				'Create Admin User'		=> 'panel/admin_user_create',
-				'Admin User Groups'		=> 'panel/admin_user_group',
+				'Order Pembelian'			=> '',
+				'Request Pembelian Produk'			=> '',
 			)
 		),
-		'util' => array(
-			'name'		=> 'Utilities',
-			'url'		=> 'util',
-			'icon'		=> 'fa fa-cogs',
+                'rpembelian' => array(
+			'name'		=> 'Report Pembelian',
+			'url'		=> '',
+			'icon'		=> 'fa fa-medium',
 			'children'  => array(
-				'Database Versions'		=> 'util/list_db',
+				'Report Pembelian'			=> 'tes/tes',
 			)
 		),
+                'mgudang' => array(
+			'name'		=> 'Gudang',
+			'url'		=> '',
+			'icon'		=> 'fa fa-medium',
+			'children'  => array(
+				'Request Pembelian Produk'			=> 'tes/tes',
+				'Barang Masuk'			=> 'tes/tes',
+				'Barang Keluar'			=> 'tes/tes',
+			)
+		),
+                'mpenjualan' => array(
+			'name'		=> 'Penjualan',
+			'url'		=> '',
+			'icon'		=> 'fa fa-medium',
+			'children'  => array(
+				'Transaksi Penjualan'			=> 'tes/tes',
+				'Pelanggan'			=> 'tes/tes',
+			)
+		),
+                'rpenjualan' => array(
+			'name'		=> 'Report Penjualan',
+			'url'		=> '',
+			'icon'		=> 'fa fa-medium',
+			'children'  => array(
+				'Report Jual Detail Produk'			=> 'tes/tes',
+				'Laporan Jual per Transaksi'			=> 'tes/tes',
+				'Cetak Transaksi Penjualan'			=> 'tes/tes',
+			)
+		),
+                'mkeuangan' => array(
+			'name'		=> 'Keuangan',
+			'url'		=> '',
+			'icon'		=> 'fa fa-medium',
+			'children'  => array(
+				'Jurnal Transaksi'			=> 'tes/tes',
+				'Laporan Keuangan'			=> 'tes/tes',
+				'Kelola Permintaan Modal'			=> 'tes/tes',
+			)
+		),
+                'msdm' => array(
+			'name'		=> 'SDM',
+			'url'		=> '',
+			'icon'		=> 'fa fa-medium',
+			'children'  => array(
+				'Kelola Karyawan'			=> 'tes/tes',
+				'Kelola Gaji'			=> 'tes/tes',
+				'Kelola Absensi'			=> 'tes/tes',
+			)
+		),
+
 	),
 
 	// Login page

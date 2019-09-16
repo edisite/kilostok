@@ -40,12 +40,8 @@
                                 <?php echo $form->open(); ?>
                                 <?php echo $form->messages(); ?>
                                 <form class="form-horizontal" action="index.html">
-                                    <fieldset class="form-group floating-label-form-group">
-
-                                        <?php echo $form->bs3_text('Username', 'username', ENVIRONMENT==='development' ? 'webmaster' : ''); ?>
-                                    </fieldset>
-                                    <fieldset class="form-group floating-label-form-group mb-1">
-                                        <?php echo $form->bs3_password('Password', 'password', ENVIRONMENT==='development' ? 'webmaster' : ''); ?>
+                                        <?php echo $form->bs3_text('Username', 'username', ENVIRONMENT==='development' ? 'edisite01@gmail.com' : ''); ?>
+                                        <?php echo $form->bs3_password('Password', 'password', ENVIRONMENT==='development' ? '123456' : ''); ?>
                                     </fieldset>
                                     <div class="form-group row">
                                         <div class="col-md-6 col-12 text-center text-sm-left">
@@ -56,7 +52,7 @@
                                         </div>
                                        
                                     </div>
-                                    <button type="submit" class="btn btn-outline-info btn-block"><i class="ft-unlock"></i> Login</button>
+                                    <button type="submit" class="btn btn-blue-grey btn-block"><i class="ft-unlock"></i> Login</button>
                                 </form>
                             </div>
                             <?php echo $form->close(); ?>
@@ -68,8 +64,8 @@
 
         </div>
         <div class="card-body pb-0">
-            <p class="text-center"><a href="recover-password.html" class="card-link">Lupa password?</a></p>
-            <p class="text-center">Belum pernah terdaftar sebelumnya? <a href="register-with-navbar.html" class="card-link">Daftarkan diri Anda</a></p>
+            <p class="text-center"><a href="forgot_password" class="card-link">Lupa password?</a></p>
+            <p class="text-center">Belum pernah terdaftar sebelumnya? <a href="register" class="card-link">Daftarkan diri Anda</a></p>
         </div>
       </div>
     </div>

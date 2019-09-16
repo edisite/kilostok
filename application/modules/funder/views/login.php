@@ -44,6 +44,10 @@
         </section>
 
         </div>
+        <div class="card-body pb-0">
+            <p class="text-center"><a href="forgot_password" class="card-link">Lupa password?</a></p>
+            <p class="text-center">Belum pernah terdaftar sebelumnya? <a href="register" class="card-link">Daftarkan diri Anda</a></p>
+        </div>
       </div>
     </div>
     <!-- ////////////////////////////////////////////////////////////////////////////-->
