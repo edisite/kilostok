@@ -21,7 +21,29 @@ $config = array(
 			'rules'		=> 'required',
 		),
 	),
-
+        	// Create Admin User
+	'register/index' => array(
+		array(
+			'field'		=> 'first_name',
+			'label'		=> 'Nama Depan',
+			'rules'		=> 'required',
+		),
+		array(
+			'field'		=> 'email',
+			'label'		=> 'Email',
+			'rules'		=> 'valid_email|is_unique[funder_users.email]',
+		),
+		array(
+			'field'		=> 'password',
+			'label'		=> 'Password',
+			'rules'		=> 'required',
+		),
+		array(
+			'field'		=> 'retype_password',
+			'label'		=> 'Retype Password',
+			'rules'		=> 'required|matches[password]',
+		),
+	),
 	// Create User
 	'user/create' => array(
 		array(
