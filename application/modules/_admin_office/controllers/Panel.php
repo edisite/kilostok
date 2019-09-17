@@ -20,6 +20,7 @@ class Panel extends Admin_Controller {
 	public function admin_user()
 	{
 		$crud = $this->generate_crud('admin_users');
+                //$crud->set_theme('datatables');
 		$crud->columns('groups', 'username', 'first_name', 'last_name', 'active');
 		$this->unset_crud_fields('ip_address', 'last_login');
 
@@ -40,7 +41,6 @@ class Panel extends Admin_Controller {
 		$crud->unset_delete();
 
 		$this->mPageTitle = 'Admin Users';
-                $this->mBreadcrumb = '';
 		$this->render_crud();
 	}
 

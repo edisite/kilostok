@@ -2,32 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/config/ion_auth.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/config/ion_auth.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/third_party/ion_auth/views_sample/auth/edit_user.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/libraries/Form_builder.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/views/login.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/config/routes.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/third_party/ion_auth/views_sample/auth/email/activate.tpl.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/controllers/Register.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/third_party/ion_auth/views_sample/auth/forgot_password.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/controllers/Panel.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/third_party/ion_auth/controllers/Auth.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/funder/config/routes.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/core/controllers/Admin_Controller.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/config/routes.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/third_party/ion_auth/views_sample/auth/email/forgot_password.tpl.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/third_party/ion_auth/views_sample/auth/deactivate_user.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/config/ci_bootstrap.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/core/MY_Controller.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/third_party/ion_auth/views_sample/auth/email/new_password.tpl.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/controllers/Home.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/system/helpers/form_helper.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/logs/log-2019-09-12.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/controllers/User.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/controllers/Login.php</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/views/register.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

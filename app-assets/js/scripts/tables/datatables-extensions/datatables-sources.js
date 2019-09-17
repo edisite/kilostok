@@ -20,8 +20,13 @@ $(document).ready(function() {
 *       Ajax sourced data        *
 **********************************/
 
-    $('.ajax-sourced').DataTable( {
-        "ajax": "../../../app-assets/data/datatables/ajax-sourced.json"
+    $('.ajax-bidang-show').DataTable( {
+        "processing": true,
+        "ajax": "masterdata/bidang/loadData",
+        "lengthMenu": [
+                        [5, 10, 25, 50, 100],
+                        [5, 10, 25, 50, 100] // change per page values here
+                    ],
     } );
 
 /***************************************
@@ -87,7 +92,7 @@ $(document).ready(function() {
         "processing": true,
         "serverSide": true,
         //"ajax": "../server_side/scripts/server_processing.php" NOTE: use serverside script to fatch the data
-        "ajax": "../../../app-assets/data/datatables/server-side.json"
+        "ajax":  "masterdata/bidang/loadData"
     } );
 
 
