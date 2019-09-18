@@ -14,12 +14,14 @@ class Panel extends Admin_Controller {
 	{
 		parent::__construct();
 		$this->load->library('form_builder');
+
 	}
 
 	// Admin Users CRUD
 	public function admin_user()
 	{
 		$crud = $this->generate_crud('admin_users');
+                //$crud->set_theme('datatables');
 		$crud->columns('groups', 'username', 'first_name', 'last_name', 'active');
 		$this->unset_crud_fields('ip_address', 'last_login');
 
