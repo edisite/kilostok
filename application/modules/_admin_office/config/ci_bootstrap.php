@@ -93,8 +93,8 @@ $config['ci_bootstrap'] = array(
 				'Bidang'			=> 'masterdata/bidang',
 				'Kategori Produk'               => 'masterdata/produk_kategori',
 				'Periode'			=> 'masterdata/periode',
-				'Gudang'			=> 'masterdata/gudang',
-				'Daftar Bank'			=> 'masterdata/daftar_bank',
+				'Satuan'			=> 'masterdata/satuan',
+				'Daftar Bank'			=> 'masterdata/bank',
 			)
 		),
 		'mitra' => array(
@@ -102,8 +102,8 @@ $config['ci_bootstrap'] = array(
 			'url'		=> 'mitra',
 			'icon'		=> 'fa fa-address-card',
 			'children'  => array(
-				'List Mitra'			=> '',
-				'Create Mitra'		=> '    ',
+				'List Mitra'			=> 'partner/mitra',
+				'Create Mitra'                  => '',
 			)
 		),
 		'funder' => array(
@@ -111,8 +111,8 @@ $config['ci_bootstrap'] = array(
 			'url'		=> 'funder',
 			'icon'		=> 'fa fa-address-card-o',
 			'children'  => array(
-				'List Funder'       => '',
-				'Create Funder'		=> '',
+				'List Funder'                   => 'partner/funder',
+				'Create Funder'                 => '',
 			)
 		),
 		'panel' => array(

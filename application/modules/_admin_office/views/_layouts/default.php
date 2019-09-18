@@ -11,7 +11,7 @@
                 <div class="app-content content">
                     <div class="content-wrapper">                        
                         
-                            <?php //$this->load->view('_partials/breadcrumb'); ?>
+                            <?php $this->load->view('_partials/breadcrumb'); ?>
                         
                         <div class="content-body"><!--fitness stats-->
                             <?php $this->load->view($inner_view); ?>

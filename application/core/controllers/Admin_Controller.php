@@ -152,7 +152,7 @@ class Admin_Controller extends MY_Controller {
 
 		// append scripts
 		$this->add_stylesheet($crud_data->css_files, FALSE);
-		$this->add_script($crud_data->js_files, TRUE, 'head');
+		$this->add_script($crud_data->js_files, TRUE, 'foot');
 
 		// display view
 		$this->mViewData['crud_output'] = $crud_data->output;

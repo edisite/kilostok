@@ -14,6 +14,7 @@ class Panel extends Admin_Controller {
 	{
 		parent::__construct();
 		$this->load->library('form_builder');
+                $this->mPageTitlePrefix ='Admin Panel - ';
 	}
 
 	// Admin Users CRUD
