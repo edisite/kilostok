@@ -95,6 +95,8 @@ $config['ci_bootstrap'] = array(
 				'Periode'			=> 'masterdata/periode',
 				'Satuan'			=> 'masterdata/satuan',
 				'Daftar Bank'			=> 'masterdata/bank',
+				'Daftar Provinsi'			=> 'masterdata/provinsi',
+				'Daftar Kab. Kota'			=> 'masterdata/regensi',
 			)
 		),
 		'mitra' => array(
