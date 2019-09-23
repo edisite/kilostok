@@ -26,6 +26,13 @@ class Akun extends Admin_Controller{
                 $this->add_stylesheet($screen);
     }
     public function index() {
+        unset($this->mMenu);
+        $aar = array('makun' => array(
+			'name'		=> 'Akun Mitra',
+			'url'		=> 'akun',
+			'icon'		=> 'fa fa-users',
+		));
+        $this->mMenu = $aar;
         $this->render('akun/data_profile');
     }
 }

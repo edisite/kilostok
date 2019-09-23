@@ -11,7 +11,7 @@
 $(document).ready(function() {
 
     var groupingTable = $('.row-grouping').DataTable({
-        responsive: false,
+        responsive: true,
         autoWidth: false,
         rowReorder: true,
         "columnDefs": [

@@ -29,6 +29,8 @@
 			$url = starts_with($file, 'http') ? $file : base_url($file);
 			echo "<script src='$url'></script>".PHP_EOL;
 		}
+                
+
 	?>
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -38,4 +40,4 @@
 	<![endif]-->
 </head>
 <!--<body class="<?php //echo $body_class; ?>"  data-open="hover" data-menu="horizontal-menu" data-col="2-columns">-->
-<body class="horizontal-layout horizontal-top-icon-menu 2-columns  menu-expanded"  data-open="hover" data-menu="horizontal-menu" data-col="2-columns">
+<body class="horizontal-layout horizontal-top-icon-menu 2-columns  menu-expanded"  data-open="hover" data-menu="horizontal-menu" data-col="2-columns" data-base_url="<?php echo base_url(); ?>">

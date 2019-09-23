@@ -306,10 +306,17 @@ table th
 }
 .flexigrid div.form-div input[type=text], .flexigrid div.form-div input[type=password]
 {
-	font-size: 15px;
+/*	font-size: 15px;
 	height:20px;
 	border: 1px solid #AAA;
-	padding: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;*/
+
+        font-size: 15px;
+        width: 300px;
+        height:35px;
+        border: 1px solid #AAA;
+        padding: 5px 5px 5px 5px;
+        background: #fafafa;
 }
 .flexigrid input[type=text].form-control {
 	width: 500px;

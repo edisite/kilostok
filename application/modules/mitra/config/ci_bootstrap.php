@@ -37,11 +37,12 @@ $config['ci_bootstrap'] = array(
 		),
 		'foot'	=> array(
                         'app-assets/vendors/js/vendors.min.js',
+			'app-assets/vendors/js/tables/datatable/datatables.min.js',
 			'app-assets/vendors/js/ui/jquery.sticky.js',
 			'app-assets/vendors/js/charts/jquery.sparkline.min.js',
 			'app-assets/vendors/js/forms/icheck/icheck.min.js',
 			'app-assets/js/core/app-menu.js',
-			'app-assets/js/core/app.js'
+			'app-assets/js/core/app.js',
 		),
 	),
 
@@ -76,6 +77,21 @@ $config['ci_bootstrap'] = array(
 			'name'		=> 'Akun Mitra',
 			'url'		=> 'akun',
 			'icon'		=> 'fa fa-users',
+		),
+                'master' => array(
+			'name'		=> 'Master',
+			'url'		=> '',
+			'icon'		=> 'fa fa-medium',
+			'children'  => array(
+				'Barang'			=> 'barang',
+				'Supplier'			=> 'supplier',
+				'Pelanggan'			=> 'pelanggan',
+			)
+		),
+                'project' => array(
+			'name'		=> 'Project',
+			'url'		=> 'project',
+			'icon'		=> 'fa fa-medium',
 		),
                 'mpembelian' => array(
 			'name'		=> 'Pembelian',
