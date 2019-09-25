@@ -4,21 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Barang extends Admin_Controller {
 	private $any_error = array();
 	// Define Main Table
-	public $tbl = 'm_barang';
+	public $tbl = 'v_produk';
 
 	public function __construct() {
         parent::__construct();
-                $files = array(
-                            'app-assets/vendors/js/tables/datatable/datatables.min.js',
-                            'app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js',
-                            'assets/custom_theme/custom.js',                            
-                            'app-assets/js/scripts/tables/datatables-extensions/datatables-sources.js',
-                );
-                $screen = array(
-                            'app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css',
-                );
-                $this->add_script($files);  
-                $this->add_stylesheet($screen);
+            $this->mPageTitle = "Master Data Barang";
+                
 	}
 
 	public function index(){
@@ -26,20 +17,20 @@ class Barang extends Admin_Controller {
 	}
 
 	public function view(){
+            
             $this->render('barang/V_barang');
 	}
 
 	public function loadData(){
-		$priv = $this->cekUser(9);
 		$select = '*';
 		//LIMIT
 		$limit = array(
-			'start'  => $this->input->get('start'),
-			'finish' => $this->input->get('length')
+			'start'  => $this->input->get('start') ?: 0,
+			'finish' => $this->input->get('length') ?: 10
 		);
 		//WHERE LIKE
 		$where_like['data'][] = array(
-			'column' => 'barang_kode, barang_nama,kategori_barang_nama, jenis_barang_nama, barang_minimum_stok, satuan_nama, barang_status_aktif',
+			'column' => 'produk_kode, produk_nama, kategori_nama, satuan_nama, produk_status_aktif',
 			'param'	 => $this->input->get('search[value]')
 		);
 		//ORDER
@@ -49,9 +40,9 @@ class Barang extends Admin_Controller {
 			'type'	 => $this->input->get('order[0][dir]')
 		);
 
-		$query_total = $this->mod->select($select, 'v_barang');
-		$query_filter = $this->mod->select($select, 'v_barang', NULL, NULL, NULL, $where_like, $order);
-		$query = $this->mod->select($select, 'v_barang', NULL, NULL, NULL, $where_like, $order, $limit);
+		$query_total = $this->mod->select($select, $this->tbl);
+		$query_filter = $this->mod->select($select, $this->tbl, NULL, NULL, NULL, $where_like, $order);
+		$query = $this->mod->select($select, $this->tbl, NULL, NULL, NULL, $where_like, $order, $limit);
 
 		$response['data'] = array();
 		if ($query<>false) {
@@ -59,52 +50,45 @@ class Barang extends Admin_Controller {
 			
 			foreach ($query->result() as $val) {
 				$button = '';
-				if ($val->barang_status_aktif == 'y') {
-					$status = '<span class="label bg-green-jungle bg-font-green-jungle"> Aktif </span>';
-					if($priv['update'] == 1)
-					{
-						$button = $button.'<button class="btn blue-ebonyclay" type="button" onclick="openFormBarang('.$val->barang_id.')" title="Edit" data-toggle="modal" href="#modaladd">
+				if ($val->produk_status_aktif == 'y') {
+					$status = '<span class="text-success"> Aktif </span>';
+					
+						$button = $button.'<button class="btn mr-1 mb-1 btn-outline-primary btn-sm" type="button" onclick="openFormBarang('.$val->produk_kode.')" title="Edit" data-toggle="modal" href="#modaladd">
 											<i class="icon-pencil text-center"></i>
 										</button>';
 								// <button class="btn blue-soft" type="button" onclick="openFormValueBarang('.$val->barang_id.')" title="Edit Value" data-toggle="modal" href="#modaladd">
 								// 	<i class="icon-notebook text-center"></i>
 								// </button>';
-					}
-					if($priv['delete'] == 1)
-					{
+					
 						$button = $button.'
-									<button class="btn red-thunderbird" type="button" onclick="deleteData('.$val->barang_id.')" title="Non Aktifkan">
+									<button class="btn mr-1 mb-1 btn-outline-danger btn-sm" type="button" onclick="deleteData('.$val->produk_kode.')" title="Non Aktifkan">
 							<i class="icon-power text-center"></i>
 						</button>';
-					}
+					
 					
 				} else {
-					$status = '<span class="label bg-red-thunderbird bg-font-red-thunderbird"> Non Aktif </span>';
-					if($priv['update'] == 1)
-					{
-						$button = $button.'<button class="btn blue-ebonyclay" type="button" onclick="openFormBarang('.$val->barang_id.')" title="Edit" data-toggle="modal" href="#modaladd" disabled>
+					$status = '<span class="text-danger"> Non Aktif </span>';
+
+						$button = $button.'<button class="btn mr-1 mb-1 btn-outline-primary btn-sm" type="button" onclick="openFormBarang('.$val->produk_kode.')" title="Edit" data-toggle="modal" href="#modaladd" disabled>
 											<i class="icon-pencil text-center"></i>
 										</button>';
-								// <button class="btn blue-soft" type="button" onclick="openFormValueBarang('.$val->barang_id.')" title="Edit Value" data-toggle="modal" href="#modaladd" disabled>
+								// <button class="btn blue-soft" type="button" onclick="openFormValueBarang('.$val->produk_kode.')" title="Edit Value" data-toggle="modal" href="#modaladd" disabled>
 								// 	<i class="icon-notebook text-center"></i>
 								// </button>';
 
-					}
-					if($priv['delete'] == 1)
-					{
-						$button = $button.'<button class="btn green-jungle" type="button" onclick="aktifData('.$val->barang_id.')" title="Aktifkan">
+						$button = $button.'<button class="btn mr-1 mb-1 btn-outline-success btn-sm" type="button" onclick="aktifData('.$val->produk_kode.')" title="Aktifkan">
 						<i class="icon-power text-center"></i>
 						</button>';
-					}
+					
 					
 				}
 				$response['data'][] = array(
 					$no,
-					$val->barang_kode,
-					$val->barang_nama,
-					$val->kategori_barang_nama,
-					$val->jenis_barang_nama,
-					number_format($val->barang_minimum_stok, 2, '.', ','),
+					$val->produk_kode,
+					$val->produk_nama,
+					$val->kategori_nama,
+					$val->satuan_nama,
+					number_format($val->produk_minimum_stok, 2, '.', ','),
 					$val->satuan_nama,
 					$status,
 					$button

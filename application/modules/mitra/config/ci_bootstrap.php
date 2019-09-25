@@ -37,8 +37,8 @@ $config['ci_bootstrap'] = array(
 		),
 		'foot'	=> array(
                         'app-assets/vendors/js/vendors.min.js',
-			'app-assets/vendors/js/tables/datatable/datatables.min.js',
 			'app-assets/vendors/js/ui/jquery.sticky.js',
+			'app-assets/vendors/js/tables/datatable/datatables.min.js',
 			'app-assets/vendors/js/charts/jquery.sparkline.min.js',
 			'app-assets/vendors/js/forms/icheck/icheck.min.js',
 			'app-assets/js/core/app-menu.js',
@@ -54,8 +54,9 @@ $config['ci_bootstrap'] = array(
 			'app-assets/vendors/css/forms/icheck/icheck.css',
 			'app-assets/vendors/css/forms/icheck/custom.css',
 			'app-assets/css/app.css',
+                        'app-assets/css/app.min.css',
+			'assets/css/style.css',
 			'app-assets/css/core/menu/menu-types/horizontal-top-icon-menu.css',
-			'assets/css/style.css'
 		)
 	),
 
@@ -86,6 +87,7 @@ $config['ci_bootstrap'] = array(
 				'Barang'			=> 'barang',
 				'Supplier'			=> 'supplier',
 				'Pelanggan'			=> 'pelanggan',
+				'Gudang'			=> 'gudang',
 			)
 		),
                 'project' => array(

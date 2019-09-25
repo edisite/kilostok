@@ -18,9 +18,10 @@ class Admin_Controller extends MY_Controller {
 
 		// only login users can access Admin Panel
 		$this->verify_login();
-
+                $this->general_library();
 		// store site config values
 //		$this->mUsefulLinks = $this->mConfig['useful_links'];
+                
 	}
 
 	// Render template (override parent)
@@ -158,4 +159,35 @@ class Admin_Controller extends MY_Controller {
 		$this->mViewData['crud_output'] = $crud_data->output;
 		$this->render('crud');
 	}
+        function general_library() {
+            $files = array(
+                            'app-assets/vendors/js/tables/datatable/datatables.min.js',
+                            'app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js',
+                            'app-assets/js/scripts/tables/datatables-extensions/datatables-sources.js',
+                            'app-assets/vendors/js/forms/select/select2.full.min.js',
+                            'app-assets/js/scripts/forms/select/form-select2.js',
+                            'app-assets/js/scripts/modal/components-modal.js',
+//                            'assets/custom_theme/custom.js',               
+                            'app-assets/js/scripts/customizer.min.js', 
+                            'app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js',
+                            'app-assets/vendors/js/forms/validation/jqBootstrapValidation.js',
+                            'app-assets/vendors/js/forms/toggle/bootstrap-switch.min.js',
+                            'app-assets/js/scripts/forms/validation/form-validation.js',
+                            'app-assets/vendors/js/forms/toggle/switchery.min.js',
+                );
+                $screen = array(
+                            'app-assets/vendors/css/tables/datatable/datatables.min.css',
+                            'app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css',
+                            'app-assets/vendors/css/forms/selects/select2.min.css',
+                            'app-assets/css/plugins/animate/animate.css',
+                            'app-assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css',
+                            'app-assets/vendors/css/forms/toggle/bootstrap-switch.min.css',
+                            'app-assets/vendors/css/forms/toggle/switchery.min.css',
+                            'app-assets/css/plugins/forms/validation/form-validation.css',
+                            'app-assets/css/plugins/forms/switch.css',  
+
+                );
+                $this->add_script($files);  
+                $this->add_stylesheet($screen);
+        }
 }
