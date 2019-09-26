@@ -1,5 +1,5 @@
     <!-- fixed-top-->
-    <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-static-top <?php echo $body_class; ?> navbar-border navbar-brand-center">
+    <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-static-top navbar-light navbar-border navbar-brand-center">
       <div class="navbar-wrapper">
         <div class="navbar-header">
           <ul class="nav navbar-nav flex-row">

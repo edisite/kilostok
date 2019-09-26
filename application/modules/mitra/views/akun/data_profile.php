@@ -20,10 +20,6 @@
                     <p>Akun Anda <span class="red">belum di verifikasi!</span>. Lengkapi data dibawah ya.</p>
                 </div>
                 <div class="card-body">
-                                        <div class="card-text">
-
-                                        </div>
-
                     <form class="form form-horizontal row-separator">
                         <div class="form-body">
                                 <h4 class="form-section"><i class="fa fa-eye"></i> Data Mitra</h4>

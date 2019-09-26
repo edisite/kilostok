@@ -29,8 +29,8 @@ class Project extends Admin_Controller
                             'app-assets/vendors/css/ui/jquery-ui.min.css',
                             'app-assets/vendors/css/forms/selects/select2.min.css',
                 );
-                $this->add_script($files);  
-                $this->add_stylesheet($screen);
+//                $this->add_script($files);  
+//                $this->add_stylesheet($screen);
     }
 
     public function index()
