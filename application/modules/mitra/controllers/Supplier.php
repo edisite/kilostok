@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Barang extends Admin_Controller {
+class Supplier extends Admin_Controller {
 	private $any_error = array();
 	// Define Main Table
-	public $tbl = 'v_produk';
+	public $tbl = 'v_supplier';
 
 	public function __construct() {
         parent::__construct();
-            $this->mPageTitle = "Master Data Barang";
+            $this->mPageTitle = "Master Data Supplier";
                 
 	}
 
@@ -18,9 +18,8 @@ class Barang extends Admin_Controller {
 
 	public function view(){
             
-            $this->render('barang/V_barang');
+            $this->render('supplier/V_supplier');
 	}
-
 	public function loadData(){
 		$select = '*';
 		//LIMIT
@@ -30,7 +29,7 @@ class Barang extends Admin_Controller {
 		);
 		//WHERE LIKE
 		$where_like['data'][] = array(
-			'column' => 'produk_kode, produk_nama, kategori_nama, satuan_nama, produk_status_aktif',
+			'column' => 'supp_nama, supp_pic, bidang_nama, regenci_name, provinces_nama',
 			'param'	 => $this->input->get('search[value]')
 		);
 		//ORDER
@@ -49,48 +48,27 @@ class Barang extends Admin_Controller {
 			$no = $limit['start']+1;
 			
 			foreach ($query->result() as $val) {
-				$button = '';
-				if ($val->produk_status_aktif == 'y') {
-					$status = '<span class="text-success"> Aktif </span>';
+                                        $button = '';
+				
 					
-						$button = $button.'<button class="btn mr-1 mb-1 btn-outline-primary btn-sm" type="button" onclick="openFormBarang('.$val->produk_kode.')" title="Edit" data-toggle="modal" href="#modaladd">
-											<i class="icon-pencil text-center"></i>
-										</button>';
-								// <button class="btn blue-soft" type="button" onclick="openFormValueBarang('.$val->barang_id.')" title="Edit Value" data-toggle="modal" href="#modaladd">
-								// 	<i class="icon-notebook text-center"></i>
-								// </button>';
-					
-						$button = $button.'
-									<button class="btn mr-1 mb-1 btn-outline-danger btn-sm" type="button" onclick="deleteData('.$val->produk_kode.')" title="Non Aktifkan">
-							<i class="icon-power text-center"></i>
-						</button>';
-					
-					
-				} else {
-					$status = '<span class="text-danger"> Non Aktif </span>';
+                                        $button = $button.'<button class="btn mr-1 mb-1 btn-outline-primary btn-sm" type="button" title="Edit" data-toggle="modal" href="#modaladd">
+                                                                                <i class="icon-pencil text-center"></i>
+                                                                        </button>';
 
-						$button = $button.'<button class="btn mr-1 mb-1 btn-outline-primary btn-sm" type="button" onclick="openFormBarang('.$val->produk_kode.')" title="Edit" data-toggle="modal" href="#modaladd" disabled>
-											<i class="icon-pencil text-center"></i>
-										</button>';
-								// <button class="btn blue-soft" type="button" onclick="openFormValueBarang('.$val->produk_kode.')" title="Edit Value" data-toggle="modal" href="#modaladd" disabled>
-								// 	<i class="icon-notebook text-center"></i>
-								// </button>';
-
-						$button = $button.'<button class="btn mr-1 mb-1 btn-outline-success btn-sm" type="button" onclick="aktifData('.$val->produk_kode.')" title="Aktifkan">
-						<i class="icon-power text-center"></i>
-						</button>';
+                                        $button = $button.'<button class="btn mr-1 mb-1 btn-outline-danger btn-sm" type="button" onclick="deleteData('.$val->supp_kode.')" title="Non Aktifkan">
+                                                <i class="icon-power text-center"></i>
+                                        </button>';
 					
-					
-				}
+				
 				$response['data'][] = array(
 					$no,
-					$val->produk_kode,
-					$val->produk_nama,
-					$val->kategori_nama,
-					$val->satuan_nama,
-					number_format($val->produk_minimum_stok, 2, '.', ','),
-					$val->satuan_nama,
-					$status,
+					$val->supp_kode,
+					$val->supp_nama,
+					$val->bidang_nama,
+					$val->regenci_name,
+					$val->provinces_nama,				
+					$val->supp_pic,
+					$val->supp_telp,
 					$button
 				);
 				$no++;

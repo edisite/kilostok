@@ -15,6 +15,7 @@ $(document).ready(function() {
 **************************************/
     searchMitra_masterData_barang();
     searchMitra_masterData_gudang();
+    searchMitra_masterData_supplier();
 
 } );
 // ------------------- MITRA ------------------
@@ -28,9 +29,15 @@ function searchMitra_masterData_barang() {
 function searchMitra_masterData_gudang() { 
     $('#gudang-server-side').DataTable( {
         "processing": true,
-        "serverSide": true,
-        //"ajax": "../server_side/scripts/server_processing.php" NOTE: use serverside script to fatch the data
+        "serverSide": true,        
         "ajax":  $base_url + "mitra/gudang/loadData"
+    } );    
+}
+function searchMitra_masterData_supplier() { 
+    $('#supplier-server-side').DataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax":  $base_url + "mitra/supplier/loadData"
     } );    
 }
 

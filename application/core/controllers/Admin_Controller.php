@@ -173,7 +173,10 @@ class Admin_Controller extends MY_Controller {
                             'app-assets/vendors/js/forms/toggle/bootstrap-switch.min.js',
                             'app-assets/js/scripts/forms/validation/form-validation.js',
                             'app-assets/vendors/js/forms/toggle/switchery.min.js',
+                            'app-assets/vendors/js/extensions/sweetalert.min.js',
                             'assets/js/scripts.js',               
+                            'assets/custom_theme/custom.js',          
+                            'app-assets/js/scripts/extensions/sweet-alerts.js',
                 );
                 $screen = array(
                             'app-assets/vendors/css/tables/datatable/datatables.min.css',
@@ -184,7 +187,8 @@ class Admin_Controller extends MY_Controller {
                             'app-assets/vendors/css/forms/toggle/bootstrap-switch.min.css',
                             'app-assets/vendors/css/forms/toggle/switchery.min.css',
                             'app-assets/css/plugins/forms/validation/form-validation.css',
-                            'app-assets/css/plugins/forms/switch.css',  
+                            'app-assets/css/plugins/forms/switch.css', 
+                            'app-assets/vendors/css/extensions/sweetalert.css',
 
                 );
                 $this->add_script($files);  
