@@ -8,38 +8,104 @@ class Project extends Admin_Controller
     function __construct()
     {
         parent::__construct();        
-                $files = array(
-                            'app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js',                
-                            'app-assets/vendors/js/forms/validation/jqBootstrapValidation.js',
-                            'app-assets/vendors/js/forms/toggle/bootstrap-switch.min.js',
-                            'app-assets/js/scripts/forms/validation/form-validation.js',
-                            'app-assets/js/scripts/pages/project-bug-list.js',
-                            'app-assets/vendors/js/forms/select/select2.min.js',
-                            'app-assets/vendors/js/tables/jquery.dataTables.min.js',
-                            'app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js',
-                            'assets/custom_theme/custom.js',
-                );
-                $screen = array(
-                            'app-assets/css/plugins/forms/validation/form-validation.css',
-                            'app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css',
-                            'app-assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css',
-                            'app-assets/vendors/css/tables/extensions/responsive.dataTables.min.css',
-                            'app-assets/vendors/css/forms/icheck/icheck.css',
-                            'app-assets/vendors/css/forms/icheck/custom.css',
-                            'app-assets/vendors/css/ui/jquery-ui.min.css',
-                            'app-assets/vendors/css/forms/selects/select2.min.css',
-                );
 //                $this->add_script($files);  
 //                $this->add_stylesheet($screen);
     }
 
     public function index()
     {
+        $this->mPageTitle = 'Project';
         $this->render('project/project_list');
     } 
     public function Create() {
+        $this->mPageTitle = 'Project';
         $this->render('project/project_create');
     }
+    
+    // Function Insert & Update
+    public function postData(){
+		$id = $this->input->post('kode');
+		if (strlen($id)>0) {
+			//UPDATE
+			$data = $this->general_post_data(2, $id);
+			$where['data'][] = array(
+				'column' => 'barang_id',
+				'param'	 => $id
+			);
+			$update = $this->mod->update_data_table($this->tbl, $where, $data);
+			if($update->status) {
+				$response['status'] = '200';
+				$queryKonversi = $this->mod->select('*', 'm_konversi', null, $where);
+				if($queryKonversi) {
+					for($i = 0; $i < sizeof($this->input->post('konversi_akhir_satuan', TRUE)); $i++) {
+						$dataKonversi = $this->general_post_data3(2, $val->konversi_id, $i, $id);
+						if(@$where_det['data']) {
+							unset($where_det['data']);
+						}
+						$where_det['data'][] = array(
+							'column'	=> 'jenis_produksidet_id',
+							'param'		=> $this->input->post('jenis_produksidet_id', TRUE)[$i]
+						);
+						$update_det = $this->mod->update_data_table('m_konversi', $where, $dataKonversi);
+						if($update_det->status) {
+							$response['status'] = '200';
+						} else {
+							$response['status'] = '204';
+						}
+					}
+					foreach ($queryKonversi->result() as $val) {
+						$whereKonversi['data'][] = array(
+							'column' => 'konversi_id',
+							'param'	 => $val->konversi_id
+						);
+						$updateKonversi = $this->mod->update_data_table('m_konversi', $whereKonversi, $dataKonversi);
+					}
+				}
+				else
+				{
+					$dataKonversi = $this->general_post_data3(1, null, $id);
+					$insert = $this->mod->insert_data_table('m_konversi', NULL, $dataKonversi);
+				}
+				if($data['barang_status_aktif'] == 'n')
+				{
+					$updateAttr = $this->nonaktif_atribut($id);
+				}
+			} else {
+				$response['status'] = '204';
+			}
+		} 
+                else {
+			//INSERT
+			$data = array(
+                            'project_mitra_id'  => '',
+                            'project_kode'  => '',
+                            'project_nama'  => '',
+                            'project_detail'  => '',
+                            'project_create_date'  => date('Y-m-d H:i:s'),
+                            'project_create_by'  => $this->session->userdata('identity'),
+                        );
+                        
+			$insert = $this->mod->insert_data_table('mitra_project', NULL, $data);
+                        var_dump($this->session->userdata());
+			if($insert->status) {
+//				$response['status'] = '200';
+//				for ($i = 0; $i < sizeof($this->input->post('konversi_akhir_satuan', TRUE)); $i++) {
+//					$data_konversi = $this->general_post_data3(1, $insert->output, $i, null);
+//					$insert_konversi = $this->mod->insert_data_table('m_konversi', NULL, $data_konversi);
+//					if($insert_konversi->status) {
+//					} else {
+//						$response['status'] = '204';
+//					}
+//				}
+                                $response['status'] = '200';
+			} else {
+				$response['status'] = '204';
+			}
+		}
+		
+		echo json_encode($response);
+	}
+
 }
 
 /* End of file Project.php */

@@ -125,7 +125,7 @@ class PenerimaanBarang extends Admin_Controller {
 		if ($query_filter<>false) {
 			$response['recordsFiltered'] = $query_filter->num_rows();
 		}
-
+                
 		echo json_encode($response);
 	}
 

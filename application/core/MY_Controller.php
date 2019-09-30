@@ -42,6 +42,7 @@ class MY_Controller extends MX_Controller {
 	protected $mUser = NULL;
 	protected $mUserGroups = array();
 	protected $mUserMainGroup;
+        protected $mitra_id = 0;
 
 	// Constructor
 	public function __construct()
@@ -273,6 +274,30 @@ class MY_Controller extends MX_Controller {
 		else
 			array_unshift($this->mBreadcrumb, $entry);
 	}
+        public function mitra_guide() {
+            $select = '*';
+            $where['data'][] = array(
+                    'column'        => 'mitra_id',
+                    'param'         => $this->mitra_id
+            );
+
+            $query = $this->mod->select($select, 'mitra_akun', NULL, $where);
+            if ($query<>false) {
+                foreach ($query->result() as $val) {
+                        // CARI JENIS BARANG                           
+                        $arrsession = array(
+                            'mitra_id'          => $val->mitra_id,
+                            'mitra_nama'        => $val->mitra_nama,
+                            'mitra_aktivasi'    => $val->mitra_aktivasi,
+                            'mitra_kode'        => $val->mitra_kode,
+                        );
+                        $this->session->set_userdata($arrsession);
+                }                    
+            }else{
+                redirect($this->mModule.'/panel/logout');
+            }
+        }
+        
 }
 
 // include base controllers

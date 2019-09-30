@@ -148,7 +148,7 @@ class API_Controller extends REST_Controller {
 			$data = array(
 				'url'			=> current_url(),
 				'module'		=> $this->router->fetch_module(),
-				'controller'	=> $this->router->fetch_class(),
+				'controller'            => $this->router->fetch_class(),
 				'action'		=> $this->router->fetch_method(),
 			);
 

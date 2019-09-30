@@ -19,6 +19,7 @@ $(document).ready(function() {
     searchMitra_gudang_surat_permintaan_pembelian_barang();
     searchMitra_pembelian_surat_permintaan_pembelian_barang();
     searchMitra_pembelian_po();
+    searchMitra_gudang_penerimaan_barang();
 
 } );
 // ------------------- MITRA ------------------
@@ -64,7 +65,7 @@ function searchMitra_pembelian_po() {
         "ajax":  $base_url + "mitra/PurchaseOrder/loaddata"
     } );    
 }
-function searchMitra_pembelian_po() { 
+function searchMitra_gudang_penerimaan_barang() { 
     $('#gudang_penerimaan_barang').DataTable( {
         "processing": true,
         "serverSide": true,
