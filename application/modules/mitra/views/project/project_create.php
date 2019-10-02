@@ -24,22 +24,22 @@
                                         <div class="form-group row">
                                                 <label class="col-md-4 label-control" for="timesheetinput1">Nama Project</label>
                                                 <div class="col-md-8">			                            
-                                                    <input type="text" class="form-control" name="barang_nama" placeholder="" required data-validation-required-message="Nama Barang Wajib di isi" />                                                        
-                                                </div>
-		                        </div>
+                                                    <input type="text" class="form-control" name="project_nama" placeholder="" required data-validation-required-message="Nama Project Wajib di isi" />                                                        
+												</div>
+										</div>
                                         <div class="form-group row">
                                                 <label class="col-md-4 label-control" for="timesheetinput1">Detail Project</label>
                                                 <div class="col-md-8">			                            
-                                                    <textarea id="projectinput8" rows="5" class="form-control" name="comment" placeholder=""></textarea>
-                                                </div>
-		                        </div>
+                                                    <textarea id="projectinput8" rows="5" class="form-control" name="project_detail" placeholder=""></textarea>
+											</div>
+						</div>
                                 </div>
 
 	                        <div class="form-actions right">
 	                            <button type="button" class="btn btn-warning mr-1" onclick="reset()">
 	                            	<i class="ft-x"></i> Cancel
 	                            </button>
-                                    <button type="submit" class="btn btn-primary" id="barangbtn">
+                                    <button type="submit" class="btn btn-primary" id=" ">
 	                                <i class="fa fa-check-square-o"></i> Save
 	                            </button>
 	                        </div>

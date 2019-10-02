@@ -1,6 +1,6 @@
 var $base_url = $("body").data("base_url");
 
-$('#formAdd').not("[type=submit]").jqBootstrapValidation({
+$('#formAdd input, #formAdd select, #formAdd textarea').not("[type=submit]").jqBootstrapValidation({
             preventSubmit: true,
             submitSuccess: function($form, event){     
              event.preventDefault();
@@ -19,7 +19,7 @@ $('#formAdd').not("[type=submit]").jqBootstrapValidation({
               },
               error:function(){
                      $('#success').html("<div class='alert alert-danger'>There is some error</div>");
-                    $('#formAdd').trigger('reset');
+                    //$('#formAdd').trigger('reset');
               },
               complete:function(){
                setTimeout(function(){

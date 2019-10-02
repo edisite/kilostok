@@ -18,7 +18,7 @@ class Admin_Controller extends MY_Controller {
 
 		// only login users can access Admin Panel
 		$this->verify_login();
-                $this->general_library();
+		$this->general_library();
 		// store site config values
 //		$this->mUsefulLinks = $this->mConfig['useful_links'];
                 
@@ -161,22 +161,23 @@ class Admin_Controller extends MY_Controller {
 	}
         function general_library() {
             $files = array(
+							//'http://localhost/fl/kelapa/assets/theme/global/plugins/jquery.min.js',
                             'app-assets/vendors/js/tables/datatable/datatables.min.js',
                             'app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js',
                             'app-assets/js/scripts/tables/datatables-extensions/datatables-sources.js',
                             'app-assets/vendors/js/forms/select/select2.full.min.js',
-//                            'app-assets/js/scripts/forms/select/form-select2.js',
-                            'app-assets/js/scripts/modal/components-modal.js',
+                            'app-assets/js/scripts/forms/select/form-select2.js',
+                            // 'app-assets/js/scripts/modal/components-modal.js',
                             'app-assets/js/scripts/customizer.min.js', 
                             'app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js',
                             'app-assets/vendors/js/forms/validation/jqBootstrapValidation.js',
                             'app-assets/vendors/js/forms/toggle/bootstrap-switch.min.js',
-                            'app-assets/js/scripts/forms/validation/form-validation.js',
+                            // 'app-assets/js/scripts/forms/validation/form-validation.js',
                             'app-assets/vendors/js/forms/toggle/switchery.min.js',
                             'app-assets/vendors/js/extensions/sweetalert.min.js',
-                            'assets/js/scripts.js',               
-                            'assets/custom_theme/custom.js',          
                             'app-assets/js/scripts/extensions/sweet-alerts.js',
+                            'assets/custom_theme/custom.js',          
+                            'assets/js/scripts.js',               
                             'app-assets/vendors/js/forms/repeater/jquery.repeater.min.js',
                             'app-assets/js/scripts/forms/form-repeater.js',
                 );

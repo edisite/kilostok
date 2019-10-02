@@ -5,11 +5,20 @@ if (!defined('BASEPATH'))
 
 class Project extends Admin_Controller
 {
+	public $tbl 	= 'mitra_project';
     function __construct()
     {
-        parent::__construct();        
-//                $this->add_script($files);  
-//                $this->add_stylesheet($screen);
+		parent::__construct();  
+		$screen = array(
+			'app-assets/css/pages/project.css',
+			'app-assets/css/pages/timeline.css',
+		);      
+		$files = array(
+			'app-assets/js/scripts/pages/timeline.js',
+		);      
+                $this->add_script($files);  
+                $this->add_stylesheet($screen);
+
     }
 
     public function index()
@@ -20,6 +29,10 @@ class Project extends Admin_Controller
     public function Create() {
         $this->mPageTitle = 'Project';
         $this->render('project/project_create');
+	}
+	public function Detail($kode_project = '', $project_id = '') {
+        $this->mPageTitle = 'Project';
+        $this->render('project/project_detail');
     }
     
     // Function Insert & Update
@@ -74,15 +87,26 @@ class Project extends Admin_Controller
 				$response['status'] = '204';
 			}
 		} 
-                else {
+			else {
 			//INSERT
+			$this->load->helper('string');
+			$getproject_kode = $this->project->SelectByMitraID($this->session->userdata('mitra_id'));
+			if($getproject_kode){
+				foreach ($getproject_kode as $val) {
+					$lastkodemitra = $val->project_kode;
+				}
+				$lastkodemitra  = increment_string($lastkodemitra);
+			}else{
+				$lastkodemitra	= "P_190001";
+			}
 			$data = array(
-                            'project_mitra_id'  => '',
-                            'project_kode'  => '',
-                            'project_nama'  => '',
-                            'project_detail'  => '',
-                            'project_create_date'  => date('Y-m-d H:i:s'),
-                            'project_create_by'  => $this->session->userdata('identity'),
+                            'project_mitra_id'  	=> $this->session->userdata('mitra_id'),
+                            'project_kode'  		=> $lastkodemitra,
+                            'project_nama'  		=> $this->input->post('project_nama'),
+                            'project_detail'  		=> $this->input->post('project_detail'),
+                            'project_create_date'  	=> date('Y-m-d H:i:s'),
+                            'project_create_by'  	=> $this->session->userdata('identity'),
+                            'project_status'  		=> '0',
                         );
                         
 			$insert = $this->mod->insert_data_table('mitra_project', NULL, $data);
@@ -105,6 +129,99 @@ class Project extends Admin_Controller
 		
 		echo json_encode($response);
 	}
+	public function loadData(){
+		$select = '*';
+		//LIMIT
+		$limit = array(
+			'start'  => $this->input->get('start') ?: 0,
+			'finish' => $this->input->get('length') ?: 10
+		);
+		$where['data'][] = array(
+			'column' => 'project_mitra_id',
+			'param'	 => $this->session->userdata('mitra_id')
+		);
+		//WHERE LIKE
+		$where_like['data'][] = array(
+			'column' => 'project_kode, project_nama, project_status',
+			'param'	 => $this->input->get('search[value]')
+		);
+		//ORDER
+		$index_order = $this->input->get('order[0][column]');
+		$order['data'][] = array(
+			'column' => $this->input->get('columns['.$index_order.'][name]'),
+			'type'	 => $this->input->get('order[0][dir]')
+		);
+
+		$query_total = $this->mod->select($select, $this->tbl);
+		$query_filter = $this->mod->select($select, $this->tbl, NULL, $where, NULL, $where_like, $order);
+		$query = $this->mod->select($select, $this->tbl, NULL, $where, NULL, $where_like, $order, $limit);
+
+		$response['data'] = array();
+		if ($query<>false) {
+			$no = $limit['start']+1;
+			
+			foreach ($query->result() as $val) {
+				$button = '';
+				if ($val->project_status == 'y') {
+					$status = '<span class="text-success"> Aktif </span>';
+					
+						$button = $button.'<button class="btn mr-1 mb-1 btn-outline-primary btn-sm" type="button" onclick="openFormBarang('.$val->project_id.')" title="Edit" data-toggle="modal" href="#modaladd">
+											<i class="icon-pencil text-center"></i>
+										</button>';
+								// <button class="btn blue-soft" type="button" onclick="openFormValueBarang('.$val->barang_id.')" title="Edit Value" data-toggle="modal" href="#modaladd">
+								// 	<i class="icon-notebook text-center"></i>
+								// </button>';
+					
+						$button = $button.'
+									<button class="btn mr-1 mb-1 btn-outline-danger btn-sm" type="button" onclick="deleteData('.$val->project_id.')" title="Non Aktifkan">
+							<i class="icon-power text-center"></i>
+						</button>';
+					
+					
+				} else {
+					$status = '<span class="text-danger"> Non Aktif </span>';
+
+						$button = $button.'<button class="btn mr-1 mb-1 btn-outline-primary btn-sm" type="button" onclick="openFormBarang('.$val->project_id.')" title="Edit" data-toggle="modal" href="#modaladd" disabled>
+											<i class="icon-pencil text-center"></i>
+										</button>';
+								// <button class="btn blue-soft" type="button" onclick="openFormValueBarang('.$val->produk_kode.')" title="Edit Value" data-toggle="modal" href="#modaladd" disabled>
+								// 	<i class="icon-notebook text-center"></i>
+								// </button>';
+
+						$button = $button.'<button class="btn mr-1 mb-1 btn-outline-success btn-sm" type="button" onclick="aktifData('.$val->project_id.')" title="Aktifkan">
+						<i class="icon-power text-center"></i>
+						</button>';
+					
+					
+				}
+				$projectnama = "
+					<a href='".base_url()."mitra/project/detail/".$val->project_kode."/".$val->project_id."' class='text-bold-600'>".$val->project_nama."</a>
+					<p class='text-muted font-small-2'>".substr($val->project_detail,0,30)."...</p>
+				";
+				$response['data'][] = array(
+					$no,
+					$val->project_kode,
+					$projectnama,
+					$val->project_create_date,
+					$status,
+					$button
+				);
+				$no++;
+			}
+		}
+
+		$response['recordsTotal'] = 0;
+		if ($query_total<>false) {
+			$response['recordsTotal'] = $query_total->num_rows();
+		}
+		$response['recordsFiltered'] = 0;
+		if ($query_filter<>false) {
+			$response['recordsFiltered'] = $query_filter->num_rows();
+		}
+
+		echo json_encode($response);
+	}
+
 
 }
 

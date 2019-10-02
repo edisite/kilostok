@@ -131,4 +131,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('MModel' => 'mod');
+$autoload['model'] = array('MModel' => 'mod','Project_model' => 'project');

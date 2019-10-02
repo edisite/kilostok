@@ -20,6 +20,7 @@ $(document).ready(function() {
     searchMitra_pembelian_surat_permintaan_pembelian_barang();
     searchMitra_pembelian_po();
     searchMitra_gudang_penerimaan_barang();
+    searchMitra_project_list();
 
 } );
 // ------------------- MITRA ------------------
@@ -70,6 +71,13 @@ function searchMitra_gudang_penerimaan_barang() {
         "processing": true,
         "serverSide": true,
         "ajax":  $base_url + "mitra/PenerimaanBarang/loaddata/1"
+    } );    
+}
+function searchMitra_project_list() { 
+    $('#mitra-project-list').DataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax":  $base_url + "mitra/project/loaddata"
     } );    
 }
 
