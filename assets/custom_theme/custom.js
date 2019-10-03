@@ -33,11 +33,12 @@ $('#formAdd input, #formAdd select, #formAdd textarea').not("[type=submit]").jqB
     
     
     function alert_success_save() {
-    swal({
-        title: "Success!",
-        text: "Data telah tersimpan!",
-        type: "success",
-        confirmButtonClass: "btn-raised btn-success",
-        confirmButtonText: "OK",
-    });
-}
+        swal({
+            title: "Success!",
+            text: "Data telah tersimpan!",
+            type: "success",
+            confirmButtonClass: "btn-raised btn-success",
+            confirmButtonText: "OK",
+        });
+    }
+    

@@ -15,8 +15,9 @@ class Project extends Admin_Controller
 		);      
 		$files = array(
 			'app-assets/js/scripts/pages/timeline.js',
+			'app-assets/vendors/js/charts/gmaps.min.js',
 		);      
-                $this->add_script($files);  
+               // $this->add_script($files);  
                 $this->add_stylesheet($screen);
 
     }
@@ -31,7 +32,11 @@ class Project extends Admin_Controller
         $this->render('project/project_create');
 	}
 	public function Detail($kode_project = '', $project_id = '') {
-        $this->mPageTitle = 'Project';
+		$this->mPageTitle = 'Project';
+		$this->mViewData['log_project'] = $this->project->Project_log_get($kode_project);
+		$this->mViewData['project_id'] = $project_id;
+		$this->mViewData['project_kode'] = $kode_project;
+		$this->mViewData['mitra_id'] =	$this->session->userdata('mitra_id');
         $this->render('project/project_detail');
     }
     
@@ -110,20 +115,12 @@ class Project extends Admin_Controller
                         );
                         
 			$insert = $this->mod->insert_data_table('mitra_project', NULL, $data);
-                        var_dump($this->session->userdata());
+			$this->project->Project_log($lastkodemitra, '1_1','Mitra Open Project','Mitra mulai membuat project baru');
+
 			if($insert->status) {
-//				$response['status'] = '200';
-//				for ($i = 0; $i < sizeof($this->input->post('konversi_akhir_satuan', TRUE)); $i++) {
-//					$data_konversi = $this->general_post_data3(1, $insert->output, $i, null);
-//					$insert_konversi = $this->mod->insert_data_table('m_konversi', NULL, $data_konversi);
-//					if($insert_konversi->status) {
-//					} else {
-//						$response['status'] = '204';
-//					}
-//				}
-                                $response['status'] = '200';
+					$response['status'] = '200';
 			} else {
-				$response['status'] = '204';
+					$response['status'] = '204';
 			}
 		}
 		
@@ -221,8 +218,75 @@ class Project extends Admin_Controller
 
 		echo json_encode($response);
 	}
+	public function PostingProject(){
+		$project		= $this->input->post('project');
+		$mitra_id 		= $this->input->post('mitra_id');
 
+		$this->project->Project_log($project, '1_2','Mitra Submit Project','');
 
+			$response['status'] = '200';		
+		$this->project->UpdateStatus($project,'2_1');
+			echo json_encode($response);
+
+	}
+	public function Rab($project_kode = '', $project_id = '')
+	{
+		# code...
+		$this->mPageTitle = 'Rencana Anggaran Biaya Project';
+        $this->render('project/v_rab');
+	}
+	public function loadData_rab(){
+		$select = '*';
+		//LIMIT
+		$limit = array(
+			'start'  => $this->input->get('start') ?: 0,
+			'finish' => $this->input->get('length') ?: 10
+		);
+		//WHERE LIKE
+		$where_like['data'][] = array('column' => 'rab_id, rab_nama, rab_induk, rab_saldo_awal, rab_saldo_akhir ',
+			'param'	 => $this->input->get('search[value]')
+		);
+		//ORDER
+		$index_order = $this->input->get('order[0][column]');
+		$order['data'][] = array(
+			'column' => $this->input->get('columns['.$index_order.'][name]'),
+			'type'	 => $this->input->get('order[0][dir]')
+		);
+
+		$query_total = $this->mod->select($select, 'mitra_rab');
+		$query_filter = $this->mod->select($select, 'mitra_rab', NULL, NULL, NULL, $where_like, $order);
+		$query = $this->mod->select($select, 'mitra_rab', NULL, NULL, NULL, $where_like, $order, $limit);
+
+		$response['data'] = array();
+		if ($query<>false) {
+			$no = $limit['start']+1;
+			
+			foreach ($query->result() as $val) {
+				$button = '';
+				$response['data'][] = array(
+				
+					$val->rab_id,
+					$val->rab_nama,
+					$val->rab_induk,
+					number_format($val->rab_saldo_awal, 2, '.', ','),
+					number_format($val->rab_saldo_akhir, 2, '.', ','),
+					$button
+				);
+				$no++;
+			}
+		}
+
+		$response['recordsTotal'] = 0;
+		if ($query_total<>false) {
+			$response['recordsTotal'] = $query_total->num_rows();
+		}
+		$response['recordsFiltered'] = 0;
+		if ($query_filter<>false) {
+			$response['recordsFiltered'] = $query_filter->num_rows();
+		}
+
+		echo json_encode($response);
+	}
 }
 
 /* End of file Project.php */

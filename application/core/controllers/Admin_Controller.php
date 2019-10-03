@@ -177,9 +177,9 @@ class Admin_Controller extends MY_Controller {
                             'app-assets/vendors/js/extensions/sweetalert.min.js',
                             'app-assets/js/scripts/extensions/sweet-alerts.js',
                             'assets/custom_theme/custom.js',          
-                            'assets/js/scripts.js',               
                             'app-assets/vendors/js/forms/repeater/jquery.repeater.min.js',
                             'app-assets/js/scripts/forms/form-repeater.js',
+                            'assets/js/scripts.js',               
                 );
                 $screen = array(
                             'app-assets/vendors/css/tables/datatable/datatables.min.css',

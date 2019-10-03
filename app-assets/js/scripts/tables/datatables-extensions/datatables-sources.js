@@ -21,6 +21,7 @@ $(document).ready(function() {
     searchMitra_pembelian_po();
     searchMitra_gudang_penerimaan_barang();
     searchMitra_project_list();
+    searchMitra_project_rab();
 
 } );
 // ------------------- MITRA ------------------
@@ -78,6 +79,13 @@ function searchMitra_project_list() {
         "processing": true,
         "serverSide": true,
         "ajax":  $base_url + "mitra/project/loaddata"
+    } );    
+}
+function searchMitra_project_rab() { 
+    $('#mitra-project-rab').DataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax":  $base_url + "mitra/project/loaddata_rab"
     } );    
 }
 

@@ -154,19 +154,19 @@ $(document).ready(function(){
 
 	$('#confirm-text').on('click',function(){
 		swal({
-		    title: "Confirm Button Text",
-		    text: "See the confirm button text! Have you noticed the Change?",
-		    icon: "warning",
+		    title: "Confirm Submit Project",
+		    text: "Apakah Anda yakin akan submit project?",
+		    icon: "info",
 		    buttons: {
                 cancel: {
-                    text: "No, cancel plx!",
+                    text: "Nanti dulu!",
                     value: null,
                     visible: true,
                     className: "",
                     closeModal: false,
                 },
                 confirm: {
-                    text: "Text Changed!!!",
+                    text: "Sudah Yakin",
                     value: true,
                     visible: true,
                     className: "",
@@ -175,9 +175,9 @@ $(document).ready(function(){
 		    }
 		}).then(isConfirm => {
 		    if (isConfirm) {
-		        swal("Changed!", "Confirm button text was changed!!", "success");
+		        swal("Submited", "Posting Project sudah berhasil", "success");
 		    } else {
-		        swal("Cancelled", "It's safe.", "error");
+		        swal("Cancelled", "Oke di cancel", "info");
 		    }
 		});
 	});
@@ -212,5 +212,4 @@ $(document).ready(function(){
 		    }
 		});
 	});
-
 });
