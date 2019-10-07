@@ -244,6 +244,78 @@ function reset() {
         });
     }
 
+        //1. mitra->RAB search parent
+        // Loading remote data
+        
+        $("#m_mitra_rab_select").select2({
+          placeholder: "Pilih Parent RAB",
+          ajax: {
+            url: $base_url + "api/internal/RAB/loaddata_select",
+            dataType: 'json',
+            delay: 250,
+            cache: true,
+            data: function (params) {
+              return {
+                q: params.term, // search term
+                page: params.page
+              };
+            },
+            processResults: function (data, params) {
+    
+              params.page = params.page || 1;
+    
+              return {
+                results: data.items,
+                pagination: {
+                  more: (params.page * 30) < data.total_count
+                }
+              };
+            },
+            cache: true
+          },
+          escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+          minimumInputLength: 0,
+          templateResult: formatRepo, // omitted for brevity, see the source of this page
+          templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
+        });
+
+        //1. mitra->RAB search parent
+        // Loading remote data
+        
+        $("#m_mitra_supplier_select").select2({
+          placeholder: "Pilih Supplier",
+          ajax: {
+            url: $base_url + "api/internal/supplier/loaddata_select",
+            dataType: 'json',
+            delay: 250,
+            cache: true,
+            data: function (params) {
+              return {
+                q: params.term, // search term
+                page: params.page
+              };
+            },
+            processResults: function (data, params) {
+    
+              params.page = params.page || 1;
+    
+              return {
+                results: data.items,
+                pagination: {
+                  more: (params.page * 30) < data.total_count
+                }
+              };
+            },
+            cache: true
+          },
+          escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+          minimumInputLength: 0,
+          templateResult: formatRepo, // omitted for brevity, see the source of this page
+          templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
+        });
+
+
+      
 
     
 

@@ -936,16 +936,16 @@ class Ion_auth_model extends CI_Model
 
 		// add in groups array if it doesn't exists and stop adding into default group if default group ids are set
 		
-                if($statusmitra == true){
-                    $this->db->set('mitra_nama',$nama_perusahaan);
-                    $this->db->set('mitra_email_bisnis',$email);
-                    $this->db->set('mitra_aktivasi','belumberifikasi');
-                    $this->db->set('mitra_register_date',date('Y-m-d H:i:s'));
-                    $this->db->insert('mitra_akun');                
-                    $kode_mitra = $this->db->insert_id();
-                }else{
-                    $kode_mitra = 0;
-                }
+                // if($statusmitra == true){
+                //     $this->db->set('mitra_nama',$nama_perusahaan);
+                //     $this->db->set('mitra_email_bisnis',$email);
+                //     $this->db->set('mitra_aktivasi','belumberifikasi');
+                //     $this->db->set('mitra_register_date',date('Y-m-d H:i:s'));
+                //     $this->db->insert('mitra_akun');                
+                //     $kode_mitra = $this->db->insert_id();
+                // }else{
+                //     $kode_mitra = 0;
+                // }
                 if( isset($default_group->id) && empty($groups) )
 		{
 			$groups[] = $default_group->id;

@@ -16,13 +16,14 @@
                         <div class="card-content">
                             <div class="card-body pt-0">
                                 <?php echo $form->open(); ?>
+                                <?php echo $form->messages(); ?>
                                 <form class="form-horizontal" action="index.html">
                                     <fieldset class="form-group floating-label-form-group">
 
-                                        <?php echo $form->bs3_text('Username', 'username', ENVIRONMENT==='development' ? 'webmaster' : ''); ?>
+                                        <?php echo $form->bs3_text('Username', 'username', ENVIRONMENT==='development' ? 'edisite02@gmail.com' : ''); ?>
                                     </fieldset>
                                     <fieldset class="form-group floating-label-form-group mb-1">
-                                        <?php echo $form->bs3_password('Password', 'password', ENVIRONMENT==='development' ? 'webmaster' : ''); ?>
+                                        <?php echo $form->bs3_password('Password', 'password', ENVIRONMENT==='development' ? '123456' : ''); ?>
                                     </fieldset>
                                     <div class="form-group row">
                                         <div class="col-md-6 col-12 text-center text-sm-left">

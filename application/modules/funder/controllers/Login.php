@@ -25,6 +25,7 @@ class Login extends MY_Controller {
 				// login succeed
 				$messages = $this->ion_auth->messages();
 				$this->system_message->set_success($messages);
+				//echo $messages;
 				redirect($this->mModule);
 			}
 			else
@@ -34,6 +35,8 @@ class Login extends MY_Controller {
 				$this->system_message->set_error($errors);
 				refresh();
 			}
+			echo $errors.'tesss';
+			return;
 		}
 		
 		// display form when no POST data, or validation failed

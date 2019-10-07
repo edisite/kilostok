@@ -2,8 +2,13 @@
 <section id="server-processing">
 	<div class="row">
 	    <div class="col-12">
+        
+            <?php
+                $this->load->view('barang/V_form_barang');
+            ?>
+                    
 	        <div class="card">
-	            <div class="card-header">
+	            <div class="card-header bg-danger">
 	                <h4 class="card-title">List Barang</h4>
 	                <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
         			<div class="heading-elements">

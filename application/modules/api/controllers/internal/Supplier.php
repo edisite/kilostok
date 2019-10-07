@@ -11,11 +11,11 @@
  *
  * @author edisite
  */
-class Satuan extends API_Controller{
+class Supplier extends API_Controller{
     //put your code here
     private $any_error = array();
 	// Define Main Table
-    public $tbl = 'm_satuan';
+    public $tbl = 'mitra_supplier';
     public function __construct() {
         parent::__construct();
     }
@@ -29,30 +29,30 @@ class Satuan extends API_Controller{
 			$param = "";
 		}
 		$select = '*';
-		$where['data'][] = array(
-			'column' => 'satuan_status_aktif',
-			'param'	 => 'y'
-		);
+		// $where['data'][] = array(
+		// 	'column' => 'satuan_status_aktif',
+		// 	'param'	 => 'y'
+		// );
 		$where_like['data'][] = array(
-			'column' => 'satuan_nama',
+			'column' => 'supp_nama',
 			'param'	 => $this->input->get('q')
 		);
 		$order['data'][] = array(
-			'column' => 'satuan_nama',
+			'column' => 'supp_nama',
 			'type'	 => 'ASC'
 		);
-		$query = $this->mod->select($select, $this->tbl, NULL, $where, NULL, $where_like, $order);
+		$query = $this->mod->select($select, $this->tbl, NULL, NULL, NULL, $where_like, $order);
 		$response['items'] = array();
 		if ($query<>false) {
 			foreach ($query->result() as $val) {
 				$response['items'][] = array(
-					'id'	=> $val->satuan_id,
-					'text'	=> $val->satuan_nama
+					'id'	=> $val->supp_id,
+					'text'	=> $val->supp_nama
 				);
 			}
 			$response['status'] = '200';
 		}
-                $this->response($response);
+		$this->response($response);
             
 	}
     

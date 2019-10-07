@@ -170,26 +170,26 @@ $config['ci_bootstrap'] = array(
 
 	// Restricted pages
 	'page_auth' => array(
-		'user/create'				=> array('webmaster', 'admin', 'manager'),
-		'user/group'				=> array('webmaster', 'admin', 'manager'),
-		'panel'						=> array('webmaster'),
-		'panel/admin_user'			=> array('webmaster'),
-		'panel/admin_user_create'               => array('webmaster'),
-		'panel/admin_user_group'                => array('webmaster'),
-		'util'						=> array('webmaster'),
-		'util/list_db'				=> array('webmaster'),
-		'util/backup_db'			=> array('webmaster'),
-		'util/restore_db'			=> array('webmaster'),
-		'util/remove_db'			=> array('webmaster'),
+		'user/create'				=> array('manager', 'manager', 'manager'),
+		'user/group'				=> array('manager', 'manager', 'manager'),
+		'panel'						=> array('manager'),
+		'panel/admin_user'			=> array('manager'),
+		'panel/admin_user_create'               => array('manager'),
+		'panel/admin_user_group'                => array('manager'),
+		'util'						=> array('manager'),
+		'util/list_db'				=> array('manager'),
+		'util/backup_db'			=> array('manager'),
+		'util/restore_db'			=> array('manager'),
+		'util/remove_db'			=> array('manager'),
 	),
 
 	// AdminLTE settings
 	'adminlte' => array(
 		'body_class' => array(
 			'webmaster'	=> 'navbar-light',
-			'admin'		=> '',
-			'manager'	=> '',
-			'staff'		=> '',
+			'admin'		=> 'navbar-light',
+			'manager'	=> 'navbar-light',
+			'staff'		=> 'navbar-light',
 		)
 	),
 

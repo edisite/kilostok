@@ -82,4 +82,24 @@ class Project_model extends MY_Model
         $this->db->where('project_kode', $project_id);
         $this->db->update('mitra_project'); // gives UPDATE `mytable` SET `field` = 'field+1' WHERE `id` = 2
     }
+    public function ProjectByKodeproject($kode_project, $mitra_id)
+    {
+        # code...
+        $mitra_id = $this->session->userdata('mitra_id') ?: $mitra_id;
+        $this->db->select('*');
+        $this->db->where('project_kode', $kode_project);
+        $this->db->where('project_mitra_id',  $mitra_id);
+        $this->db->order_by('project_id','asc');
+        $sql =  $this->db->get('mitra_project')->result();        
+        return $sql;
+    }
+    public function ProjectShowFunder()
+    {
+        # code...
+        $this->db->select('*');
+        $this->db->where_in('project_status', array('3_1','2_2'));
+        $this->db->order_by('project_id','asc');
+        $sql =  $this->db->get('v_project_list')->result();        
+        return $sql;
+    }
 }

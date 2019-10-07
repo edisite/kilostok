@@ -16,9 +16,19 @@ class Barang extends Admin_Controller {
 		$this->view();
 	}
 
-	public function view(){
+	public function project($project_kode, $mitra_id){
             
-            $this->render('barang/V_barang');
+		$getdata_project = $this->project->ProjectByKodeproject($project_kode, $mitra_id);	
+		if($getdata_project){
+			foreach($getdata_project as $val){
+				$getnama_project =  $val->project_nama;
+			}
+		}else{
+			redirect(base_url().'mitra');
+		}
+		$this->mViewData['nama_project']	= $getnama_project;
+		$this->mViewData['kode_project']	= $project_kode;
+		$this->render('barang/V_barang');
 	}
 
 	public function loadData(){
@@ -729,7 +739,9 @@ class Barang extends Admin_Controller {
 			$data = array(
 //				'produk_id' 					=> $this->input->post('barang_kode', TRUE),
 				'produk_id' 					=> "KST". rand(100, 999),
-//				'barang_nomor' 					=> $this->input->post('barang_nomor', TRUE),
+				'mitra_id' 						=> $this->session->userdata('mitra_id'),
+				'mitra_project_kode' 			=> $this->input->post('project_kode', TRUE),
+				'supp_id' 						=> $this->input->post('m_mitra_supplier_select', TRUE),
 				'produk_nama' 					=> $this->input->post('barang_nama', TRUE),
 //				'm_jenis_barang_id' 			=> $this->input->post('m_jenis_barang_id', TRUE),
 				'm_jenis_barang_id' 			=> '1',

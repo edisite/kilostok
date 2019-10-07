@@ -104,8 +104,8 @@ $config['ci_bootstrap'] = array(
 			'url'		=> 'mitra',
 			'icon'		=> 'fa fa-address-card',
 			'children'  => array(
-				'List Mitra'			=> 'partner/mitra',
-				'Create Mitra'                  => '',
+				'List Mitra'							=> 'partner/mitra',
+				'Pengajuan Pinjaman'                  	=> 'mitra/peganjuan',
 			)
 		),
 		'funder' => array(

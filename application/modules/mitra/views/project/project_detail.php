@@ -1,13 +1,13 @@
 <div class="app-content content">
       <div class="content-wrapper">
-      <div class="content-detached content-left">
+      <div class="content-detached content-left bordered">
             <div class="content-body">
                 <section class="row">
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-head">
                                     <div class="card-header">
-                                    <h4 class="card-title">iOS APP Development</h4>
+                                    <h4 class="card-title">Nama Project</h4>
                                     <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
                                     </div>
                                     <div class="px-1">
@@ -58,12 +58,12 @@
                                 <!-- project-info -->
                                 <div class="card-body">
                                     <div class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1">
-                                    <span>Project Overall</span>
+                                    <span>Project Progress</span>
                                     </div>
                                     <div class="row py-2">
                                     <div class="col-lg-6 col-md-12">
                                         <div class="insights px-2">
-                                            <div><span class="text-info h3">82%</span> <span class="float-right">Tasks</span></div>
+                                            <div><span class="text-info h3">82%</span> <span class="float-right">Syarat Pengajuan</span></div>
                                             <div class="progress progress-md mt-1 mb-0">
                                                 <div class="progress-bar bg-info" role="progressbar" style="width: 82%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
@@ -71,31 +71,15 @@
                                     </div>
                                     <div class="col-lg-6 col-md-12">
                                         <div class="insights px-2">
-                                            <div><span class="text-success h3">78%</span> <span class="float-right">TaskLists</span></div>
+                                            <div><span class="text-success h3">78%</span> <span class="float-right">Progres Project</span></div>
                                             <div class="progress progress-md mt-1 mb-0">
                                                 <div class="progress-bar bg-success" role="progressbar" style="width: 78%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
                                     </div>
                                     </div>
-                                    <div class="row py-2">
-                                    <div class="col-lg-6 col-md-12">
-                                        <div class="insights px-2">
-                                            <div><span class="text-warning h3">68%</span> <span class="float-right">Milestones</span></div>
-                                            <div class="progress progress-md mt-1 mb-0">
-                                                <div class="progress-bar bg-warning" role="progressbar" style="width: 68%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-12">
-                                        <div class="insights px-2">
-                                            <div><span class="text-danger h3">62%</span> <span class="float-right">Bugs</span></div>
-                                            <div class="progress progress-md mt-1 mb-0">
-                                                <div class="progress-bar bg-danger" role="progressbar" style="width: 62%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
+                                    
+                                    
                                 </div>
                             </div>
                         </div>
@@ -135,8 +119,10 @@
                 <div class="card-content">
                     <!-- project search -->
                     <div class="card-body border-top-blue-grey border-top-lighten-5">
-                         <a href="">   
-                        <button type="button" class="btn btn-info btn-min-width btn-glow mr-1 mb-2 btn-block" id="buttonrab" onclick="window.location.href='<?php echo base_url().'mitra/project/rab/'.$project_kode.'/'.$project_id; ?>'"><i class="fa fa-plus-square-o"></i> BUAT RAB </button>
+                        <a href="<?php echo base_url().'mitra/project/rab/'.$project_kode.'/'.$project_id; ?>"</a>
+                        <button type="button" class="btn btn-info btn-min-width btn-glow mr-1 mb-2 btn-block" id="buttonrab" onclick="window.location.locations=''"><i class="fa fa-plus-square-o"></i> BUAT RAB </button>
+                        <a href="<?php echo base_url().'mitra/barang/project/'.$project_kode.'/'.$project_id; ?>"</a>
+                        <button type="button" class="btn btn-default btn-min-width btn-glow mr-1 mb-2 btn-block" id="buttonrab" onclick="window.location.locations=''"><i class="fa fa-plus-square-o"></i> BUAT Daftar Barang </button>
                     </div>
                     <!-- /project search -->
                 </div>

@@ -1,7 +1,5 @@
-	<div class="row">
-		<div class="col-md-12">
 	        <div class="card">
-	            <div class="card-header">
+	            <div class="card-header bg-info">
 	                <h4 class="card-title" id="horz-layout-icons">Form Tambah Barang</h4>
 	                <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
         			<div class="heading-elements">
@@ -22,11 +20,25 @@
                                         <div id="success"> </div>                                      
                                         <div></div>
                                         <div class="form-group row">
+                                                <label class="col-md-4 label-control" for="timesheetinput1">Kode Project</label>
+                                                <div class="col-md-8">			                            
+                                                    <input type="text" class="form-control" name="kode_project" value="<?php echo $kode_project; ?>" disabled />                                                
+                                                    <input type="hidden" name="project_kode" value="<?php echo $kode_project; ?>"/>         
+                                                </div>
+		                        		</div>
+                                        <div class="form-group row">
+                                                <label class="col-md-4 label-control" for="timesheetinput1">Nama Project</label>
+                                                <div class="col-md-8">			                            
+                                                    <input type="text" class="form-control" name="nama_project" value="<?php echo $nama_project; ?>" disabled />                          
+													<input type="hidden" name="nama_project" value="<?php echo $nama_project; ?>"/>                                    
+                                                </div>
+		                        		</div>
+                                        <div class="form-group row">
                                                 <label class="col-md-4 label-control" for="timesheetinput1">Nama Barang</label>
                                                 <div class="col-md-8">			                            
                                                     <input type="text" class="form-control" name="barang_nama" placeholder="" required data-validation-required-message="Nama Barang Wajib di isi" />                                                        
                                                 </div>
-		                        </div>
+		                        		</div>
                                         <div class="form-group row">
                                                 <label class="col-md-4 label-control" for="timesheetinput1">Nama Kategori Barang</label>
                                                 <div class="col-md-8">			                            
@@ -34,7 +46,7 @@
                                                     <select class="form-control" id="m_kategori_barang_id" name="m_kategori_barang_id" required></select>
                                                 </div>
                                                 </div>
-		                        </div>
+		                        		</div>
                                         <div class="form-group row">
                                                 <label class="col-md-4 label-control" for="timesheetinput1">Satuan Barang</label>
                                                 <div class="col-md-8">			                            
@@ -43,6 +55,14 @@
                                                 </div>
                                                 </div>
 		                        </div>
+                                        <div class="form-group row">
+                                                <label class="col-md-4 label-control" for="timesheetinput1">Nama Supplier</label>
+                                                <div class="col-md-8">			                            
+                                                    <div class="input-icon right">                                                   
+                                                    <select class="form-control" id="m_mitra_supplier_select" name="m_mitra_supplier_select" required></select>
+                                                </div>
+                                                </div>
+		                        		</div>
                                         <div class="form-group row">
                                                 <label class="col-md-4 label-control" for="timesheetinput1">Status Barang</label>
                                                 <div class="col-md-8">			                            
@@ -69,5 +89,3 @@
 	                </div>
 	            </div>
 	        </div>
-	    </div>
-	</div>

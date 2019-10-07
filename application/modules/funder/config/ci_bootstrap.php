@@ -36,7 +36,7 @@ $config['ci_bootstrap'] = array(
 
 		),
 		'foot'	=> array(
-                        'app-assets/vendors/js/vendors.min.js',
+			'app-assets/vendors/js/vendors.min.js',
 			'app-assets/vendors/js/ui/jquery.sticky.js',
 			'app-assets/vendors/js/charts/jquery.sparkline.min.js',
 			'app-assets/vendors/js/forms/icheck/icheck.min.js',
@@ -56,7 +56,7 @@ $config['ci_bootstrap'] = array(
 	// Default stylesheets to embed at page head
 	'stylesheets' => array(
 		'screen' => array(
-                        'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CMuli:300,400,500,700',
+			'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CMuli:300,400,500,700',
 			'app-assets/css/vendors.css',
 			'app-assets/vendors/css/forms/icheck/icheck.css',
 			'app-assets/vendors/css/forms/icheck/custom.css',
@@ -138,10 +138,10 @@ $config['ci_bootstrap'] = array(
 	// AdminLTE settings
 	'adminlte' => array(
 		'body_class' => array(
-			'webmaster'	=> 'navbar-dark bg-blue-grey bg-lighten-1',
-			'admin'		=> '',
-			'manager'	=> '',
-			'staff'		=> '',
+			'webmaster'	=> 'navbar-light',
+			'admin'		=> 'navbar-light',
+			'manager'	=> 'navbar-light',
+			'staff'		=> 'navbar-light',
 		)
 	),
 

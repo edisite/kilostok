@@ -17,6 +17,7 @@ class Mitra extends Admin_Controller {
 
 	public function view(){
                 $crud = $this->generate_crud($this->tbl);
+                
                 $crud->columns('mitra_nama', 'mitra_email_bisnis', 'mitra_kode', 'mitra_regkode', 'mitra_inisial','mitra_aktivasi');
                 $crud->display_as('periode_id', 'Kode');
                 $crud->display_as('periode_nama', 'Nama');
