@@ -274,7 +274,7 @@ class MY_Controller extends MX_Controller {
 		else
 			array_unshift($this->mBreadcrumb, $entry);
 	}
-        public function mitra_guide() {
+	public function mitra_guide() {
             $select = '*';
             $where['data'][] = array(
                     'column'        => 'mitra_id',

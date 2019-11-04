@@ -3,11 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/assets/custom_theme/custom.js</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/app-assets/js/scripts/forms/select/form-select2.js</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/app-assets/js/scripts/tables/datatables-extensions/datatables-sources.js</file>
-            <file>file:/C:/xampp/htdocs/fl2/kiostok/assets/js/scripts.js</file>
             <file>file:/C:/xampp/htdocs/fl2/kiostok/app-assets/js/scripts/tables/datatables-extensions/datatables-sources.min.js</file>
+            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/controllers/PenerimaanBarang.php</file>
+            <file>file:/C:/xampp/htdocs/fl2/kiostok/app-assets/js/scripts/forms/select/form-select2.js</file>
+            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/config/ci_bootstrap.php</file>
+            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/views/permintaan-pembelian/V_surat_permintaan_pembelian2.php</file>
+            <file>file:/C:/xampp/htdocs/fl2/kiostok/assets/custom_theme/custom.js</file>
+            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/controllers/PurchaseOrder.php</file>
+            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/views/permintaan-pembelian/V_form_surat_permintaan_pembelian.php</file>
+            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/views/barang/V_form_barang.php</file>
+            <file>file:/C:/xampp/htdocs/fl2/kiostok/assets/js/scripts.js</file>
+            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/views/permintaan-pembelian/V_surat_permintaan_pembelian.php</file>
+            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/views/purchase-order/V_purchase_order.php</file>
+            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/views/project/project_detail.php</file>
+            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/views/barang/V_barang.php</file>
+            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/views/penerimaan-barang/V_penerimaan_barang.php</file>
+            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/core/controllers/Admin_Controller.php</file>
+            <file>file:/C:/xampp/htdocs/fl2/kiostok/app-assets/js/scripts/tables/datatables-extensions/datatables-sources.js</file>
+            <file>file:/C:/xampp/htdocs/fl2/kiostok/application/modules/mitra/controllers/PermintaanPembelian.php</file>
         </group>
     </open-files>
 </project-private>
